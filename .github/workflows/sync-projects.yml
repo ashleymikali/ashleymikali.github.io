@@ -15,12 +15,12 @@ jobs:
       - name: Checkout Project 1 Repo
         uses: actions/checkout@v3
         with:
-          repository: ashleymikali/spending-habits-prediction
+          repository: ashleymikali/spending-habit-prediction
           path: spending-habits-project
 
       - name: Copy `.qmd` files from Project Repos to Portfolio Repo
         run: |
-          cp spending-habits-prediction/analysis.qmd ./spending-habits-project
+          cp spending-habit-prediction/analysis.qmd ./spending-habits-project
 
       - name: Commit and Push Changes
         run: |
