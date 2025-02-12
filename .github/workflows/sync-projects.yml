@@ -22,6 +22,10 @@ jobs:
           
       - name: List Files in Project Repository
         run: ls -R
+        
+      - name: Create target directory for Spending Habits Project in Portfolio
+        run: |
+          mkdir -p ./projects/spending-habit-project
 
       - name: Copy analysis.qmd and Data Folder to Portfolio Repository
         run: |
