@@ -33,6 +33,10 @@ jobs:
       - name: Create target directory for Spending Habits Project in Portfolio
         run: |
           mkdir -p ./projects/spending-habit-prediction
+          
+      - name: Remove any .git directories in source
+        run: find spending-habit-prediction/ -name ".git" -type d -exec rm -rf {} +
+
 
       - name: Copy analysis.qmd and Data Folder to Portfolio Repository
         run: |
