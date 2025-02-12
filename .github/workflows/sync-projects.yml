@@ -23,7 +23,8 @@ jobs:
 
       - name: Copy `.qmd` files from Project Repos to Portfolio Repo
         run: |
-          cp spending-habits-project/analysis.qmd ./spending-habits-project
+          cp spending-habits-project/spending-habit-prediction/analysis.qmd ./spending-habits-project
+          cp spending-habits-project-spending-habit-prediction/data ./spending-habits-project
 
       - name: Commit and Push Changes
         run: |
