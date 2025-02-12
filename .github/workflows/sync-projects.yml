@@ -35,7 +35,7 @@ jobs:
           mkdir -p ./projects/spending-habit-prediction
           
       - name: Remove any .git directories in source
-        run: find spending-habit-prediction/ -name ".git" -type d -exec rm -rf {} +
+        run: find . -path "*/spending-habit-prediction/.git" -type d -exec rm -rf {} +
 
 
       - name: Copy analysis.qmd and Data Folder to Portfolio Repository
