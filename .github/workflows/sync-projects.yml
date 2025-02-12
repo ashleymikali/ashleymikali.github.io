@@ -23,7 +23,7 @@ jobs:
       - name: Copy analysis.qmd and Data Folder to Portfolio Repository
         run: |
           cp spending-habit-prediction/analysis.qmd ./projects/spending-habit-prediction/
-          cp -r spending0habit-prediction/data ./projects/spending-habit-prediction/
+          cp -r spending-habit-prediction/data ./projects/spending-habit-prediction/
           
       - name: Commit and Push Changes
         run: |
