@@ -6,30 +6,29 @@ on:
       - main
 
 jobs:
-  sync_projects:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Portfolio Repo
+      - name: Checkout Portfolio Repository
         uses: actions/checkout@v3
-
-      - name: Checkout Project 1 Repo
+        with:
+          repository: ashleymikali/ashleymikali.github.io
+          
+      - name: Checkout Spending Habits Project Repository
         uses: actions/checkout@v3
         with:
           repository: ashleymikali/spending-habit-prediction
-          path: spending-habits-project
-          
-      - name: List files in project repo
-        run: ls -R
+          path: spending-habit-prediction
 
-      - name: Copy `.qmd` files from Project Repos to Portfolio Repo
+      - name: Copy analysis.qmd and Data Folder to Portfolio Repository
         run: |
-          cp spending-habits-project/spending-habit-prediction/analysis.qmd ./spending-habits-project
-          cp -r spending-habits-project/spending-habit-prediction/data ./spending-habits-project
-
+          cp spending-habit-prediction/analysis.qmd ./projects/spending-habit-prediction/
+          cp -r spending0habit-prediction/data ./projects/spending-habit-prediction/
+          
       - name: Commit and Push Changes
         run: |
           git config --local user.name "GitHub Actions"
           git config --local user.email "actions@github.com"
           git add .
-          git commit -m "Sync latest project files" || echo "No changes to commit"
+          git commit -m "Sync Spending Habits Project files to Portfolio" || echo "No changes to commit"
           git push origin main
