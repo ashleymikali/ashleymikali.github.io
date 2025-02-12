@@ -36,14 +36,14 @@ jobs:
       - name: List Files in Projects Folder for Debugging
         run: |
           ls -R projects
-
-      - name: Check for changes
-        id: check_changes
-        run: |
-          git diff --exit-code || echo "No changes detected"
   
       - name: Commit and Push Changes
         run: |
-          git add .
-          git commit -m "Sync Spending Habits Project files"
-          git push origin main
+          if git diff --quiet; then
+            echo "No changes detected"
+          else
+            echo "Changes detected"
+            git add .
+            git commit -m "Sync Spending Habits Project files"
+            git push origin main
+          fi
