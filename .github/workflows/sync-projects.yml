@@ -21,6 +21,9 @@ jobs:
       - name: Copy `.qmd` files from Project Repos to Portfolio Repo
         run: |
           cp spending-habit-prediction/analysis.qmd ./spending-habits-project
+      
+      - name: List files in project repo
+        run: ls -R
 
       - name: Commit and Push Changes
         run: |
