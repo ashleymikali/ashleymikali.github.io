@@ -1,0 +1,31 @@
+name: Sync Projects from Other Repositories
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync_projects:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Portfolio Repo
+        uses: actions/checkout@v3
+
+      - name: Checkout Project 1 Repo
+        uses: actions/checkout@v3
+        with:
+          repository: ashleymikali/spending-habits-prediction
+          path: spending-habits-project
+
+      - name: Copy `.qmd` files from Project Repos to Portfolio Repo
+        run: |
+          cp spending-habits-prediction/analysis.qmd ./spending-habits-project
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.name "GitHub Actions"
+          git config --local user.email "actions@github.com"
+          git add .
+          git commit -m "Sync latest project files" || echo "No changes to commit"
+          git push origin main
