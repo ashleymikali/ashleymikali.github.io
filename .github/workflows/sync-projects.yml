@@ -30,9 +30,9 @@ jobs:
           git config --local user.email "actions@github.com"
           git remote set-url origin https://x-access-token:${{ secrets.PORTFOLIO_TOKEN }}@github.com/ashleymikali/ashleymikali.github.io.git
         
-      - name: Create target directory for Spending Habits Project in Portfolio
-        run: |
-          mkdir -p ./projects/spending-habit-prediction
+      #- name: Create target directory for Spending Habits Project in Portfolio
+        #run: |
+          #mkdir -p ./projects/spending-habit-prediction
           
       - name: Remove any .git directories in source
         run: find . -path "*/spending-habit-prediction/.git" -type d -exec rm -rf {} +
@@ -41,10 +41,10 @@ jobs:
         run: |
           ls -R projects
 
-      - name: Copy analysis.qmd and Data Folder to Portfolio Repository
-        run: |
-          cp ../spending-habit-prediction/analysis.qmd ./projects/spending-habit-prediction/
-          cp -r ../spending-habit-prediction/data ./projects/spending-habit-prediction/
+      #- name: Copy analysis.qmd and Data Folder to Portfolio Repository
+        #run: |
+          #cp ../spending-habit-prediction/analysis.qmd ./projects/spending-habit-prediction/
+          #cp -r ../spending-habit-prediction/data ./projects/spending-habit-prediction/
 
       - name: Commit and Push Changes
         run: |
