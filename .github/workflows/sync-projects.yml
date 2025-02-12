@@ -25,7 +25,7 @@ jobs:
         
       - name: Create target directory for Spending Habits Project in Portfolio
         run: |
-          mkdir -p ./projects/spending-habit-project
+          mkdir -p ./projects/spending-habit-prediction
 
       - name: Copy analysis.qmd and Data Folder to Portfolio Repository
         run: |
