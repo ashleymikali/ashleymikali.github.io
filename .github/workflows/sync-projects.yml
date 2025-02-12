@@ -37,6 +37,9 @@ jobs:
       - name: Remove any .git directories in source
         run: find . -path "*/spending-habit-prediction/.git" -type d -exec rm -rf {} +
 
+      - name: List Files for Debugging
+        run: |
+          ls -R projects/spending-habit-prediction
 
       - name: Copy analysis.qmd and Data Folder to Portfolio Repository
         run: |
