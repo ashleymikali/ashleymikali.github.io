@@ -39,7 +39,7 @@ jobs:
 
       - name: List Files for Debugging
         run: |
-          ls -R projects/spending-habit-prediction
+          ls -R projects
 
       - name: Copy analysis.qmd and Data Folder to Portfolio Repository
         run: |
