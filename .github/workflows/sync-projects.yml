@@ -19,6 +19,9 @@ jobs:
         with:
           repository: ashleymikali/spending-habit-prediction
           path: spending-habit-prediction
+          
+      - name: List Files in Project Repository
+        run: ls -R
 
       - name: Copy analysis.qmd and Data Folder to Portfolio Repository
         run: |
