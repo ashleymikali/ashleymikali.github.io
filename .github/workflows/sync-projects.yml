@@ -24,11 +24,10 @@ jobs:
       - name: List Files in Project Repository
         run: ls -R
         
-      - name: Set up GitHub Token for Authentication
+      - name: Set up GitHub Token for Commit
         run: |
           git config --local user.name "GitHub Actions"
           git config --local user.email "actions@github.com"
-          git remote set-url origin https://x-access-token:${{ secrets.PORTFOLIO_TOKEN }}@github.com/ashleymikali/ashleymikali.github.io.git
         
       - name: Create target directory for Spending Habits Project in Portfolio
         run: |
