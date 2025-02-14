@@ -13,7 +13,12 @@ website:
       - section: "Projects"
         href: about.qmd
         contents:
-          - projects/spending-habit-prediction/analysis.qmd
+          - section: "Spending Habits"
+            contents:
+            - projects/spending-habit-prediction/spending-about.qmd
+            - text: "Code & Analysis"
+              href: projects/spending-habit-prediction/spending-analysis.qmd
+          
           
   page-navigation: true
   #back-to-top-navigation: true
