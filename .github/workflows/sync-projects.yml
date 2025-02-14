@@ -20,6 +20,7 @@ jobs:
         run: |
           git fetch origin
           git checkout sync-branch || git checkout -b sync-branch
+          git push origin sync-branch
           git pull origin sync-branch
           
       - name: Checkout Spending Habits Project Repository
