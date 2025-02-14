@@ -52,5 +52,5 @@ jobs:
             echo "Changes detected"
             git add .
             git commit -m "Sync Spending Habits Project files"
-            git push origin sync-branch
+            git push --set-upstream origin sync-branch
           fi
