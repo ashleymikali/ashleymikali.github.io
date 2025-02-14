@@ -8,7 +8,7 @@
 
 <meta name="author" content="Ash R">
 
-<title>Logistic Regression Analysis of Spending Control Based on Materialism and Impulsivity</title>
+<title>Logistic Regression Analysis of Spending Control Based on Materialism and Impulsivity – Ashley Russell | Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,34 +58,202 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="spending-analysis_files/libs/clipboard/clipboard.min.js"></script>
-<script src="spending-analysis_files/libs/quarto-html/quarto.js"></script>
-<script src="spending-analysis_files/libs/quarto-html/popper.min.js"></script>
-<script src="spending-analysis_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="spending-analysis_files/libs/quarto-html/anchor.min.js"></script>
-<link href="spending-analysis_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="spending-analysis_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="spending-analysis_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="spending-analysis_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="spending-analysis_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../projects/spending-habit-prediction/spending-about.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
 
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body>
+<body class="nav-sidebar docked">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-full">
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../about.html">Projects</a></li><li class="breadcrumb-item"><a href="../../projects/spending-habit-prediction/spending-about.html">Spending Habits</a></li><li class="breadcrumb-item"><a href="../../projects/spending-habit-prediction/spending-analysis.html">Code &amp; Analysis</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Ashley Russell | Portfolio</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Projects</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Spending Habits</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../projects/spending-habit-prediction/spending-about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../projects/spending-habit-prediction/spending-analysis.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Code &amp; Analysis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#loading-relevant-packages" id="toc-loading-relevant-packages" class="nav-link active" data-scroll-target="#loading-relevant-packages">Loading Relevant Packages</a></li>
+  <li><a href="#loading-the-data-set" id="toc-loading-the-data-set" class="nav-link" data-scroll-target="#loading-the-data-set">Loading the Data Set</a></li>
+  <li><a href="#creating-a-new-data-frame-with-relevant-variables" id="toc-creating-a-new-data-frame-with-relevant-variables" class="nav-link" data-scroll-target="#creating-a-new-data-frame-with-relevant-variables">Creating a New Data Frame with Relevant Variables</a></li>
+  <li><a href="#data-dictionary" id="toc-data-dictionary" class="nav-link" data-scroll-target="#data-dictionary">Data Dictionary</a></li>
+  <li><a href="#cleaning-the-data" id="toc-cleaning-the-data" class="nav-link" data-scroll-target="#cleaning-the-data">Cleaning the Data</a></li>
+  <li><a href="#univariate-plots" id="toc-univariate-plots" class="nav-link" data-scroll-target="#univariate-plots">Univariate Plots</a>
+  <ul class="collapse">
+  <li><a href="#spending-habits-consulting-a-budget" id="toc-spending-habits-consulting-a-budget" class="nav-link" data-scroll-target="#spending-habits-consulting-a-budget">Spending Habits, Consulting a Budget</a></li>
+  <li><a href="#frugality-materialism" id="toc-frugality-materialism" class="nav-link" data-scroll-target="#frugality-materialism">Frugality, Materialism</a></li>
+  <li><a href="#impulsivity-temptation" id="toc-impulsivity-temptation" class="nav-link" data-scroll-target="#impulsivity-temptation">Impulsivity, Temptation</a></li>
+  <li><a href="#age" id="toc-age" class="nav-link" data-scroll-target="#age">Age</a></li>
+  </ul></li>
+  <li><a href="#bivariate-plots" id="toc-bivariate-plots" class="nav-link" data-scroll-target="#bivariate-plots">Bivariate Plots</a>
+  <ul class="collapse">
+  <li><a href="#spending-habits-consulting-a-budget-1" id="toc-spending-habits-consulting-a-budget-1" class="nav-link" data-scroll-target="#spending-habits-consulting-a-budget-1">Spending Habits &amp; Consulting a Budget</a></li>
+  <li><a href="#spending-habits-frugality" id="toc-spending-habits-frugality" class="nav-link" data-scroll-target="#spending-habits-frugality">Spending Habits &amp; Frugality</a></li>
+  <li><a href="#spending-habits-materialism" id="toc-spending-habits-materialism" class="nav-link" data-scroll-target="#spending-habits-materialism">Spending Habits &amp; Materialism</a></li>
+  <li><a href="#spending-habits-impulsivity" id="toc-spending-habits-impulsivity" class="nav-link" data-scroll-target="#spending-habits-impulsivity">Spending Habits &amp; Impulsivity</a></li>
+  <li><a href="#spending-habits-resisting-temptation" id="toc-spending-habits-resisting-temptation" class="nav-link" data-scroll-target="#spending-habits-resisting-temptation">Spending Habits &amp; Resisting Temptation</a></li>
+  <li><a href="#spending-habits-age" id="toc-spending-habits-age" class="nav-link" data-scroll-target="#spending-habits-age">Spending Habits &amp; Age</a></li>
+  <li><a href="#generalized-pairs-plot" id="toc-generalized-pairs-plot" class="nav-link" data-scroll-target="#generalized-pairs-plot">Generalized Pairs Plot</a></li>
+  </ul></li>
+  <li><a href="#adjustments-new-plots" id="toc-adjustments-new-plots" class="nav-link" data-scroll-target="#adjustments-new-plots">Adjustments &amp; New Plots</a>
+  <ul class="collapse">
+  <li><a href="#univariate-spending-habits" id="toc-univariate-spending-habits" class="nav-link" data-scroll-target="#univariate-spending-habits">Univariate: Spending Habits</a></li>
+  <li><a href="#bivariate-spending-habits-materialism" id="toc-bivariate-spending-habits-materialism" class="nav-link" data-scroll-target="#bivariate-spending-habits-materialism">Bivariate: Spending Habits &amp; Materialism</a></li>
+  <li><a href="#bivariate-spending-habits-impulsivity" id="toc-bivariate-spending-habits-impulsivity" class="nav-link" data-scroll-target="#bivariate-spending-habits-impulsivity">Bivariate: Spending Habits &amp; Impulsivity</a></li>
+  </ul></li>
+  <li><a href="#comparisons" id="toc-comparisons" class="nav-link" data-scroll-target="#comparisons">Comparisons</a>
+  <ul class="collapse">
+  <li><a href="#spending-habits-in-total-sample-vs-young-adults" id="toc-spending-habits-in-total-sample-vs-young-adults" class="nav-link" data-scroll-target="#spending-habits-in-total-sample-vs-young-adults">Spending Habits in Total Sample vs Young Adults</a></li>
+  <li><a href="#spending-habits-materialism-in-total-sample-vs-young-adults" id="toc-spending-habits-materialism-in-total-sample-vs-young-adults" class="nav-link" data-scroll-target="#spending-habits-materialism-in-total-sample-vs-young-adults">Spending Habits &amp; Materialism in Total Sample vs Young Adults</a></li>
+  <li><a href="#spending-habits-impulsivity-in-total-sample-vs-young-adults" id="toc-spending-habits-impulsivity-in-total-sample-vs-young-adults" class="nav-link" data-scroll-target="#spending-habits-impulsivity-in-total-sample-vs-young-adults">Spending Habits &amp; Impulsivity in Total Sample vs Young Adults</a></li>
+  </ul></li>
+  <li><a href="#regression-models" id="toc-regression-models" class="nav-link" data-scroll-target="#regression-models">Regression Models</a>
+  <ul class="collapse">
+  <li><a href="#making-the-models" id="toc-making-the-models" class="nav-link" data-scroll-target="#making-the-models">Making the Models</a>
+  <ul class="collapse">
+  <li><a href="#model-1-using-materalism-to-predict-spending-habits-in-young-adults" id="toc-model-1-using-materalism-to-predict-spending-habits-in-young-adults" class="nav-link" data-scroll-target="#model-1-using-materalism-to-predict-spending-habits-in-young-adults">Model 1: Using Materalism to Predict Spending Habits in Young Adults</a></li>
+  <li><a href="#model-2-using-impulsivity-to-predict-spending-habits-in-young-adults" id="toc-model-2-using-impulsivity-to-predict-spending-habits-in-young-adults" class="nav-link" data-scroll-target="#model-2-using-impulsivity-to-predict-spending-habits-in-young-adults">Model 2: Using Impulsivity to Predict Spending Habits in Young Adults</a></li>
+  <li><a href="#model-3-using-materialism-impulsivity-to-predict-spending-habits-in-young-adults" id="toc-model-3-using-materialism-impulsivity-to-predict-spending-habits-in-young-adults" class="nav-link" data-scroll-target="#model-3-using-materialism-impulsivity-to-predict-spending-habits-in-young-adults">Model 3: Using Materialism &amp; Impulsivity to Predict Spending Habits in Young Adults</a></li>
+  <li><a href="#model-4-using-materialism-impulsivity-and-their-interaction-to-predict-spending-habits-in-young-adults" id="toc-model-4-using-materialism-impulsivity-and-their-interaction-to-predict-spending-habits-in-young-adults" class="nav-link" data-scroll-target="#model-4-using-materialism-impulsivity-and-their-interaction-to-predict-spending-habits-in-young-adults">Model 4: Using Materialism &amp; Impulsivity AND Their Interaction to Predict Spending Habits in Young Adults</a></li>
+  </ul></li>
+  <li><a href="#comparing-the-models-to-determine-the-best-one" id="toc-comparing-the-models-to-determine-the-best-one" class="nav-link" data-scroll-target="#comparing-the-models-to-determine-the-best-one">Comparing the Models to Determine the “Best” One</a></li>
+  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a></li>
+  <li><a href="#plot-of-model-3" id="toc-plot-of-model-3" class="nav-link" data-scroll-target="#plot-of-model-3">Plot of Model 3</a></li>
+  </ul></li>
+  <li><a href="#final-thoughts" id="toc-final-thoughts" class="nav-link" data-scroll-target="#final-thoughts">Final Thoughts</a></li>
+  <li><a href="#summary-of-environment" id="toc-summary-of-environment" class="nav-link" data-scroll-target="#summary-of-environment">Summary of Environment</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ashleymikali/ashleymikali.github.io/blob/main/projects/spending-habit-prediction/spending-analysis.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ashleymikali/ashleymikali.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
 
-<main class="content column-page" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../about.html">Projects</a></li><li class="breadcrumb-item"><a href="../../projects/spending-habit-prediction/spending-about.html">Spending Habits</a></li><li class="breadcrumb-item"><a href="../../projects/spending-habit-prediction/spending-analysis.html">Code &amp; Analysis</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Logistic Regression Analysis of Spending Control Based on Materialism and Impulsivity</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta column-body">
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
@@ -1603,10 +1771,11 @@ loaded via a namespace (and not attached):
 [41] compiler_4.4.2    </code></pre>
 </div>
 </div>
+
+
 </section>
 
-</main>
-<!-- /main column -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -2027,7 +2196,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="../../projects/spending-habit-prediction/spending-about.html" class="pagination-link" aria-label="Project Overview">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Project Overview</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ashleymikali/ashleymikali.github.io/blob/main/projects/spending-habit-prediction/spending-analysis.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ashleymikali/ashleymikali.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Ashley Russell</p>
+</div>
+  </div>
+</footer>
 
 
 
