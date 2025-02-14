@@ -46,7 +46,7 @@ jobs:
           ls -R projects/spending-habit-prediction
           
       - name: Check for Untracked Files
-        rin: |
+        run: |
           git status --porcelain | grep '??' || echo "No untracked files"
           
       - name: Check for Changes using git status --porcelain
