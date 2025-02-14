@@ -15,9 +15,11 @@ jobs:
         with:
           repository: ashleymikali/ashleymikali.github.io
           
-      - name: Checout or Switch to Sync Branch
+      - name: Checkout or Switch to Sync Branch & Pull Latest Changes
         run: |
-          git checkout -b sync-branch || git checkout sync-branch
+          git fetch origin
+          git checkout sync-branch || git checkout -b sync-branch
+          git pull origin sync-branch
           
       - name: Checkout Spending Habits Project Repository
         uses: actions/checkout@v3
@@ -50,5 +52,5 @@ jobs:
             echo "Changes detected"
             git add .
             git commit -m "Sync Spending Habits Project files"
-            git push --set-upstream origin sync-branch
+            git push origin sync-branch
           fi
