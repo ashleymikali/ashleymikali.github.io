@@ -43,11 +43,11 @@ jobs:
 
       - name: List Files in Projects Folder for Debugging
         run: |
-          ls -R projects
+          ls -R projects/spending-habit-prediction
           
       - name: Add files
         run: |
-          git add .
+          git add projects-spending-habit-prediction
           
       - name: Check Git Status
         run: |
@@ -60,5 +60,5 @@ jobs:
           else
             echo "Changes detected"
             git commit -m "Sync Spending Habits Project files"
-            git push --set-upstream origin sync-branch
+            git push origin sync-branch
           fi
