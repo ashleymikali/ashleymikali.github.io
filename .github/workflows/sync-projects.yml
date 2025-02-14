@@ -20,7 +20,6 @@ jobs:
         run: |
           git fetch origin
           git checkout sync-branch || git checkout -b sync-branch
-       #  git push origin sync-branch
           git pull origin sync-branch
           
       - name: Checkout Spending Habits Project Repository
@@ -50,8 +49,10 @@ jobs:
           git status --porcelain | grep '??' || echo "No untracked files"
           
       - name: Check for Changes using git status --porcelain
+        id: status_check
         run: |
           status=$(git status --porcelain)
+          echo "status=$status" >> $GITHUB_ENV
           if [[ -z "$status" ]]; then
             echo "No changes detected in files."
           else
@@ -68,7 +69,7 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
-          if git diff --quiet && [[ -z "$status" ]]; then
+          if [[ -z "$status" ]] && git diff --quiet; then
             echo "No changes detected, skipping commit."
           else
             echo "Changes detected, committing and pushing."
