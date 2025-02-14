@@ -16,11 +16,11 @@ jobs:
         with:
           repository: ashleymikali/ashleymikali.github.io
           
-      - name: Checkout or Switch to Sync Branch & Pull Latest Changes
+      - name: Checkout Sync Branch & Pull Latest Changes
         run: |
           git fetch origin
           git checkout sync-branch || git checkout -b sync-branch
-          git push origin sync-branch
+       #  git push origin sync-branch
           git pull origin sync-branch
           
       - name: Checkout Spending Habits Project Repository
@@ -45,20 +45,34 @@ jobs:
         run: |
           ls -R projects/spending-habit-prediction
           
-      - name: Add files
-        run: |
-          git add projects/spending-habit-prediction
+      - name: Check for Untracked Files
+        rin: |
+          git status --porcelain | grep '??' || echo "No untracked files"
           
-      - name: Check Git Status
+      - name: Check for Changes using git status --porcelain
         run: |
-          git status
-  
-      - name: Commit and Push Changes
+          status=$(git status --porcelain)
+          if [[ -z "$status" ]]; then
+            echo "No changes detected in files."
+          else
+            echo "Changes detected in files."
+          fi
+
+      - name: Check for Content Differences using git diff
         run: |
           if git diff --quiet; then
-            echo "No changes detected"
+            echo "No content changes detected."
           else
-            echo "Changes detected"
+            echo "Content changes detected."
+          fi
+
+      - name: Commit and Push Changes
+        run: |
+          if git diff --quiet && [[ -z "$status" ]]; then
+            echo "No changes detected, skipping commit."
+          else
+            echo "Changes detected, committing and pushing."
+            git add .
             git commit -m "Sync Spending Habits Project files"
-            git push origin sync-branch
+            git push --set-upstream origin sync-branch
           fi
