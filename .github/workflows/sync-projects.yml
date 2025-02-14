@@ -47,7 +47,7 @@ jobs:
           
       - name: Add files
         run: |
-          git add projects-spending-habit-prediction
+          git add projects/spending-habit-prediction
           
       - name: Check Git Status
         run: |
