@@ -10,6 +10,7 @@ jobs:
   sync_files:
     runs-on: ubuntu-latest
     steps:
+    
       - name: Checkout Portfolio Repository
         uses: actions/checkout@v3
         with:
@@ -30,19 +31,22 @@ jobs:
       - name: List Files in Portfolio Repository
         run: ls -R
         
-      - name: Set up GitHub Token & Switch to Desired Branch
+      - name: Set up GitHub Token
         run: |
           git config --local user.name "GitHub Actions"
           git config --local user.email "actions@github.com"
           git remote set-url origin https://x-access-token:${{ secrets.PORTFOLIO_TOKEN }}@github.com/ashleymikali/ashleymikali.github.io.git
           
-          
-      - name: Remove any .git directories in source
+      - name: Remove any .git directories to avoid conflicts
         run: find . -path "*/spending-habit-prediction/.git" -type d -exec rm -rf {} +
 
       - name: List Files in Projects Folder for Debugging
         run: |
           ls -R projects
+          
+      - name: Check Git Status
+        run: |
+          git status
   
       - name: Commit and Push Changes
         run: |
