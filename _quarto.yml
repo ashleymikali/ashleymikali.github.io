@@ -3,6 +3,7 @@ project:
 
 website:
   title: "Ashley Russell | Portfolio"
+  
   sidebar:
     style: "docked"
     search: true
@@ -12,8 +13,16 @@ website:
       - section: "Projects"
         href: about.qmd
         contents:
-          - index.qmd
           - projects/spending-habit-prediction/analysis.qmd
+          
+  page-navigation: true
+  #back-to-top-navigation: true
+  
+  page-footer:
+    right: "Ashley Russell" 
+    
+  repo-url: https://github.com/ashleymikali/ashleymikali.github.io
+  repo-actions: [source, issue]
       
 format:
   html:
