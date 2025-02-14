@@ -1,0 +1,23 @@
+project:
+  type: website
+
+website:
+  title: "Ashley Russell | Portfolio"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - text: "Home"
+        href: index.qmd
+      - section: "Projects"
+        href: about.qmd
+        contents:
+          - index.qmd
+          - projects/spending-habit-prediction/analysis.qmd
+      
+format:
+  html:
+    theme: lux
+    css: styles.css
+    toc: true
+    toc-depth: 3
