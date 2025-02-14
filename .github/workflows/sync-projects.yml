@@ -44,6 +44,10 @@ jobs:
         run: |
           ls -R projects
           
+      - name: Add files
+        run: |
+          git add .
+          
       - name: Check Git Status
         run: |
           git status
@@ -54,7 +58,6 @@ jobs:
             echo "No changes detected"
           else
             echo "Changes detected"
-            git add .
             git commit -m "Sync Spending Habits Project files"
             git push --set-upstream origin sync-branch
           fi
