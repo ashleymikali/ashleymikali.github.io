@@ -1,0 +1,12 @@
+---
+title: "Cover Letter"
+format: html
+page-layout: full
+theme: lux
+editor: visual
+---
+
+```{=html}
+<object data="ar_coverletter1.pdf" type="application/PDF" width="100%" height="100%" style="min-height:100vh;">
+</object>
+```
