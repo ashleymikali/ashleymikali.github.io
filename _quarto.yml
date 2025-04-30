@@ -1,0 +1,47 @@
+project: 
+  type: website
+  output-dir: _site
+
+website:
+  title: "Ashley Russell | Portfolio"
+  
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - text: "Home"
+        href: index.qmd
+      - section: "Projects"
+        href: about.qmd
+        contents:
+          - section: "Spending Habits"
+            contents:
+            - projects/spending-habit-prediction/spending-about.qmd
+            - text: "Code & Analysis"
+              href: projects/spending-habit-prediction/spending-analysis.qmd
+      - section: "Assignments"
+        contents:
+          - section: "Statistical Machine Learning"
+            contents:
+            - section: "Job Application 1"
+              href: assignments/job1/jobapp1.qmd
+              contents:
+              - assignments/job1/resume1.qmd
+              - assignments/job1/coverletter1.qmd
+        
+          
+  page-navigation: true
+  #back-to-top-navigation: true
+  
+  page-footer:
+    right: "Ashley Russell" 
+    
+  repo-url: https://github.com/ashleymikali/ashleymikali.github.io
+  repo-actions: [source, issue]
+      
+format:
+  html:
+    theme: lux
+    css: styles.css
+    toc: true
+    toc-depth: 3
