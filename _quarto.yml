@@ -1,6 +1,6 @@
-project:
+project: 
   type: website
-  output-dir: .
+  output-dir: docs
 
 website:
   title: "Ashley Russell | Portfolio"
