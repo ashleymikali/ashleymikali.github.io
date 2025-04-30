@@ -1,9 +1,0 @@
----
-title: "Job Application 1"
-format: html
-page-layout: full
-theme: lux
-editor: visual
----
-
-Included are my [resume](resume1.qmd), [cover letter](coverletter1.qmd) and [project](../../projects/spending-habit-prediction/spending-about.qmd)! Please note that the project is currently undergoing an overhaul and therefore the contents of the project are outdated and are not accurately reflected by the resume. The updated version will be posted soon.
