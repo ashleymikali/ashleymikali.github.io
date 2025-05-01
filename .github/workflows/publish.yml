@@ -26,16 +26,11 @@ jobs:
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: |
-            any::ggplot2
-            any::dplyr
             any::tidymodels
-            any::tidyverse
             any::knitr
             any::ggformula
             any::GGally
-            any::dplyr
             any::mosaic
-            any::broom
             any::RColorBrewer
       
       - name: Render and Publish
