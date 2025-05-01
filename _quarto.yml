@@ -1,7 +1,10 @@
 project: 
   type: website
   output-dir: _site
-
+  
+execute:
+  freeze: auto
+  
 website:
   site-url: https://ashleymikali.com
   title: "Ashley Russell | Portfolio"

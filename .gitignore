@@ -6,3 +6,6 @@
 .Rproj
 /.quarto/
 /_site/
+/_freeze/
+/*/_freeze/
+/*/*/_freeze/
