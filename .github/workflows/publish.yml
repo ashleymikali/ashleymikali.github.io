@@ -32,6 +32,9 @@ jobs:
             any::ggformula
             any::GGally
             any::mosaic
+            
+      - name: Install RColorBrewer manually
+        run: Rscript -e 'install.packages("RColorBrewer")'
       
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
