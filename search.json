@@ -1,5 +1,17 @@
 [
   {
+    "objectID": "assignments/job1/jobapp1.html",
+    "href": "assignments/job1/jobapp1.html",
+    "title": "Job Application 1",
+    "section": "",
+    "text": "Included are my resume, cover letter and project! Please note that the project is currently undergoing an overhaul and therefore the contents of the project are outdated and are not accurately reflected by the resume. The updated version will be posted soon.",
+    "crumbs": [
+      "Assignments",
+      "Statistical Machine Learning",
+      "Job Application 1"
+    ]
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Projects",
@@ -7,6 +19,54 @@
     "text": "Logistic Regression Analysis of Spending Control Based on Materialism and Impulsivity\nAn analysis of spending behavior based on self-reported personality traits. This project involved building multiple logistic regression models to predict whether individuals were likely to have ‘desirable’ or ‘undesirable’ spending habits. The final model was selected based on AIC and relevance to real-world applications.\nLearn more about the project here and see its execution here.",
     "crumbs": [
       "Projects"
+    ]
+  },
+  {
+    "objectID": "projects/spending-habit-prediction/spending-about.html",
+    "href": "projects/spending-habit-prediction/spending-about.html",
+    "title": "Project Overview",
+    "section": "",
+    "text": "This project investigates how self-control and materialistic tendencies influence spending behaviors in young adults (18-24). Using data from the National Financial Well-Being Survey (collected by the Consumer Financial Protection Bureau), I explored how these factors impact the likelihood of exhibiting “good” or “bad” spending habits across different age groups.",
+    "crumbs": [
+      "Projects",
+      "Spending Habits",
+      "Project Overview"
+    ]
+  },
+  {
+    "objectID": "projects/spending-habit-prediction/spending-about.html#packages-used",
+    "href": "projects/spending-habit-prediction/spending-about.html#packages-used",
+    "title": "Project Overview",
+    "section": "Packages Used",
+    "text": "Packages Used\nRColorBrewer, broom, mosaic, ggplot2, dplyr, ggformula, knitr, and other libraries were used for data manipulation, visualization, and statistical analysis.",
+    "crumbs": [
+      "Projects",
+      "Spending Habits",
+      "Project Overview"
+    ]
+  },
+  {
+    "objectID": "projects/spending-habit-prediction/spending-about.html#model-comparison",
+    "href": "projects/spending-habit-prediction/spending-about.html#model-comparison",
+    "title": "Project Overview",
+    "section": "Model Comparison",
+    "text": "Model Comparison\n\nModel 1: Simple logistic regression using materialism as a predictor.\nModel 2: Logistic regression with materialism and impulsivity as predictors.\nModel 3: Logistic regression with self-control and materialism as predictors.\nModel 4: A more complex logistic regression model that includes an interaction between self-control and materialism.",
+    "crumbs": [
+      "Projects",
+      "Spending Habits",
+      "Project Overview"
+    ]
+  },
+  {
+    "objectID": "projects/spending-habit-prediction/spending-about.html#model-selection",
+    "href": "projects/spending-habit-prediction/spending-about.html#model-selection",
+    "title": "Project Overview",
+    "section": "Model Selection",
+    "text": "Model Selection\n\nBest Model Based on AIC: Model 3\nBest Model Based on BIC: Model 2\nBest Model Based on Significance: Model 2 (all p-values were statistically significant).\n\nAfter careful consideration, Model 3 was selected as the primary model. This decision was based on its stronger analytical credibility (as indicated by the AIC) and its alignment with the research question, as it accounts for both predictor variables. While Model 2 also performed well, it only considered one of the predictors, making it less representative of the full scope of the research.",
+    "crumbs": [
+      "Projects",
+      "Spending Habits",
+      "Project Overview"
     ]
   },
   {
@@ -271,66 +331,6 @@
       "Projects",
       "Spending Habits",
       "Code & Analysis"
-    ]
-  },
-  {
-    "objectID": "assignments/job1/jobapp1.html",
-    "href": "assignments/job1/jobapp1.html",
-    "title": "Job Application 1",
-    "section": "",
-    "text": "Included are my resume, cover letter and project! Please note that the project is currently undergoing an overhaul and therefore the contents of the project are outdated and are not accurately reflected by the resume. The updated version will be posted soon.",
-    "crumbs": [
-      "Assignments",
-      "Statistical Machine Learning",
-      "Job Application 1"
-    ]
-  },
-  {
-    "objectID": "projects/spending-habit-prediction/spending-about.html",
-    "href": "projects/spending-habit-prediction/spending-about.html",
-    "title": "Project Overview",
-    "section": "",
-    "text": "This project investigates how self-control and materialistic tendencies influence spending behaviors in young adults (18-24). Using data from the National Financial Well-Being Survey (collected by the Consumer Financial Protection Bureau), I explored how these factors impact the likelihood of exhibiting “good” or “bad” spending habits across different age groups.",
-    "crumbs": [
-      "Projects",
-      "Spending Habits",
-      "Project Overview"
-    ]
-  },
-  {
-    "objectID": "projects/spending-habit-prediction/spending-about.html#packages-used",
-    "href": "projects/spending-habit-prediction/spending-about.html#packages-used",
-    "title": "Project Overview",
-    "section": "Packages Used",
-    "text": "Packages Used\nRColorBrewer, broom, mosaic, ggplot2, dplyr, ggformula, knitr, and other libraries were used for data manipulation, visualization, and statistical analysis.",
-    "crumbs": [
-      "Projects",
-      "Spending Habits",
-      "Project Overview"
-    ]
-  },
-  {
-    "objectID": "projects/spending-habit-prediction/spending-about.html#model-comparison",
-    "href": "projects/spending-habit-prediction/spending-about.html#model-comparison",
-    "title": "Project Overview",
-    "section": "Model Comparison",
-    "text": "Model Comparison\n\nModel 1: Simple logistic regression using materialism as a predictor.\nModel 2: Logistic regression with materialism and impulsivity as predictors.\nModel 3: Logistic regression with self-control and materialism as predictors.\nModel 4: A more complex logistic regression model that includes an interaction between self-control and materialism.",
-    "crumbs": [
-      "Projects",
-      "Spending Habits",
-      "Project Overview"
-    ]
-  },
-  {
-    "objectID": "projects/spending-habit-prediction/spending-about.html#model-selection",
-    "href": "projects/spending-habit-prediction/spending-about.html#model-selection",
-    "title": "Project Overview",
-    "section": "Model Selection",
-    "text": "Model Selection\n\nBest Model Based on AIC: Model 3\nBest Model Based on BIC: Model 2\nBest Model Based on Significance: Model 2 (all p-values were statistically significant).\n\nAfter careful consideration, Model 3 was selected as the primary model. This decision was based on its stronger analytical credibility (as indicated by the AIC) and its alignment with the research question, as it accounts for both predictor variables. While Model 2 also performed well, it only considered one of the predictors, making it less representative of the full scope of the research.",
-    "crumbs": [
-      "Projects",
-      "Spending Habits",
-      "Project Overview"
     ]
   },
   {
