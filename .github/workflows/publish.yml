@@ -21,16 +21,11 @@ jobs:
         uses: r-lib/actions/setup-r@v2
         with:
           r-version: 'release'
-
-      - name: Gather R Packages
-        uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          extra-packages: |
-            any::tidymodels
-            any::knitr
-            any::ggformula
-            any::GGally
-            any::mosaic
+            
+      - name: Install R Packages Manually
+        run: |
+          Rscript -e 'install.packages("pak")'
+          Rscript -e 'pak::pkg_install(c("tidymodels", "ggformula", "mosaic", "GGally", "knitr", "RColorBrewer"))'
       
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
