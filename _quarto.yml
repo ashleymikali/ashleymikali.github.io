@@ -3,6 +3,7 @@ project:
   output-dir: _site
 
 website:
+  site-url: https://ashleymikali.com
   title: "Ashley Russell | Portfolio"
   
   sidebar:
