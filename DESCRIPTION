@@ -1,0 +1,14 @@
+Package: portfolio
+Title: AR Website
+Version: 1.0.0
+Description: Packages used in uploaded projects
+Depends: 
+    R (>= 3.1.0)
+Imports: 
+    GGally,
+    ggformula,
+    knitr,
+    mosaic,
+    RColorBrewer,
+    rmarkdown,
+    tidymodels
