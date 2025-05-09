@@ -19,20 +19,20 @@ website:
         href: about.qmd
         contents:
           - text: "Spending Habits Analysis"
-            href: sp-v2.qmd
+            href: projects/spending-behavior-model/spending-habits-analysis.qmd
           - text: "Spending Habits Prediction"
-            href: projects/spending-habit-prediction/spending-about.qmd
+            href: placeholder.qmd
           - text: "Diabetes Prediction"
-            href: projects/spending-habit-prediction/spending-about.qmd
+            href: placeholder.qmd
           - text: "K-Pop Release Radar"
-            href: projects/spending-habit-prediction/spending-about.qmd
+            href: placeholder.qmd
         
           
   #page-navigation: true
   back-to-top-navigation: true
   
   page-footer:
-    left: "[Ashley Russell ♡](github.com/ashleymikali)"
+    left: "[Ashley Russell ♡](https://github.com/ashleymikali)"
     right: "Made with Quarto & hot cocoa ☕️🧸🤎" 
     
   repo-url: https://github.com/ashleymikali/ashleymikali.github.io

@@ -5,11 +5,16 @@ Description: Packages used in uploaded projects
 Depends: 
     R (>= 3.1.0)
 Imports: 
+    car,
     GGally,
     ggformula,
     knitr,
+    MASS,
     mosaic,
+    naniar,
+    olsrr,
     RColorBrewer,
     rmarkdown,
     tidymodels,
-    tidyverse
+    tidyverse,
+    wacolors

@@ -2,12 +2,9 @@
 title: "Projects"
 listing:
     contents:
-        - inspo.md
-        - trial_index.md
+        - projects/spending-behavior-model/spending-habits-analysis.qmd
     fields: [image, title, description]
     type: grid
-    categories: cloud
-    feed: 
-        categories: R
+    categories: unnumbered
 page-layout: full
 ---

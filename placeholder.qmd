@@ -1,0 +1,5 @@
+---
+title: "This, my friend, is what we call a ✨ placeholder page ✨"
+format: html
+---
+
