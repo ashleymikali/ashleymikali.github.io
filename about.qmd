@@ -1,9 +1,13 @@
 ---
 title: "Projects"
+listing:
+    contents:
+        - inspo.md
+        - trial_index.md
+    fields: [image, title, description]
+    type: grid
+    categories: cloud
+    feed: 
+        categories: R
+page-layout: full
 ---
-
-# Logistic Regression Analysis of Spending Control Based on Materialism and Impulsivity
-
-An analysis of spending behavior based on self-reported personality traits. This project involved building multiple logistic regression models to predict whether individuals were likely to have 'desirable' or 'undesirable' spending habits. The final model was selected based on AIC and relevance to real-world applications.
-
-Learn more about the project [here](projects/spending-habit-prediction/spending-about.qmd) and see its execution [here](projects/spending-habit-prediction/spending-analysis.qmd).

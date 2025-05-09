@@ -6,45 +6,43 @@ project:
   
 website:
   site-url: https://ashleymikali.com
-  title: "Ashley Russell | Portfolio"
+  title: "[ash r. ♡](index.qmd)"
   
   sidebar:
     style: "docked"
     search: true
+    collapse-level: 1
     contents:
       - text: "Home"
         href: index.qmd
       - section: "Projects"
         href: about.qmd
         contents:
-          - section: "Spending Habits"
-            contents:
-            - projects/spending-habit-prediction/spending-about.qmd
-            - text: "Code & Analysis"
-              href: projects/spending-habit-prediction/spending-analysis.qmd
-      - section: "Assignments"
-        contents:
-          - section: "Statistical Machine Learning"
-            contents:
-            - section: "Job Application 1"
-              href: assignments/job1/jobapp1.qmd
-              contents:
-              - assignments/job1/resume1.qmd
-              - assignments/job1/coverletter1.qmd
+          - text: "Spending Habits Analysis"
+            href: sp-v2.qmd
+          - text: "Spending Habits Prediction"
+            href: projects/spending-habit-prediction/spending-about.qmd
+          - text: "Diabetes Prediction"
+            href: projects/spending-habit-prediction/spending-about.qmd
+          - text: "K-Pop Release Radar"
+            href: projects/spending-habit-prediction/spending-about.qmd
         
           
-  page-navigation: true
-  #back-to-top-navigation: true
+  #page-navigation: true
+  back-to-top-navigation: true
   
   page-footer:
-    right: "Ashley Russell" 
+    left: "[Ashley Russell ♡](github.com/ashleymikali)"
+    right: "Made with Quarto & hot cocoa ☕️🧸🤎" 
     
   repo-url: https://github.com/ashleymikali/ashleymikali.github.io
   repo-actions: [source, issue]
       
 format:
   html:
-    theme: lux
+    theme: flatly
     css: styles.css
-    toc: true
-    toc-depth: 3
+    grid:
+      sidebar-width: 265px
+    #toc: true
+    #toc-depth: 3
