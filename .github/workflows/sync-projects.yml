@@ -47,17 +47,21 @@ jobs:
       - name: Check for Untracked Files
         run: |
           git status --porcelain | grep '??' || echo "No untracked files"
-          
-      - name: Check for Changes using git status --porcelain
+
+      - name: Check for Changes using git status
         id: status_check
         run: |
-          status=$(git status --porcelain)
-          echo "status=$status" >> $GITHUB_ENV
-          if [[ -z "$status" ]]; then
-            echo "No changes detected in files."
-          else
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "changed=true" >> $GITHUB_ENV
             echo "Changes detected in files."
+          else
+            echo "changed=false" >> $GITHUB_ENV
+          echo "No changes detected in files."
           fi
+
+      - name: Run only if changes were found
+        if: env.changed == 'true'
+        run: echo "Do something here because files changed"
 
       - name: Check for Content Differences using git diff
         run: |
@@ -68,12 +72,13 @@ jobs:
           fi
 
       - name: Commit and Push Changes
+        env:
+          changed: ${{ env.changed }}
         run: |
-          if [[ -z "$status" ]] && git diff --quiet; then
+          if [[ "$changed" != "true" ]] && git diff --quiet; then
             echo "No changes detected, skipping commit."
           else
             echo "Changes detected, committing and pushing."
             git add .
-            git commit -m "Synced project files"
+            git commit -m "Synced project files" || echo "Nothing to commit"
             git push --set-upstream origin sync-branch
-          fi
