@@ -56,7 +56,7 @@ jobs:
             echo "Changes detected in files."
           else
             echo "changed=false" >> $GITHUB_ENV
-          echo "No changes detected in files."
+            echo "No changes detected in files."
           fi
 
       - name: Run only if changes were found
@@ -82,3 +82,4 @@ jobs:
             git add .
             git commit -m "Synced project files" || echo "Nothing to commit"
             git push --set-upstream origin sync-branch
+          fi
