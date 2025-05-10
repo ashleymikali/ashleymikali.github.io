@@ -1,0 +1,26 @@
+/*-- scss:defaults --*/
+
+// Colors
+$text: #232946;
+$background: #d4d8f0;
+$primary: #b8c1ec;
+$secondary: #eebbc3;
+$accent: #d4939d;
+
+
+// Base document colors
+$sidebar-bg: $background; // sidebar
+$sidebar-fg: $accent; // navbar sidebar elements
+$sidebar-hl: $text; // highlight color when hovering over sidebar links
+$body-bg: $background; // page background 
+$body-color: $text; // page text 
+$footer-bg: $background; // footer 
+$link-color: $accent; // hyperlinks 
+
+// Inline code
+$code-bg: $text; // inline code background color
+$code-color: $secondary; // inline code text color
+
+// Code blocks
+$code-block-bg: $secondary; // code block background
+$code-block-border-color: $text; // code block border color

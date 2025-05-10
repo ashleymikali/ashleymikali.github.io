@@ -1,5 +1,5 @@
 ---
-#title: "ash r"
+title: "♡ ash r. | [Click here to view my projects! ♡](about.qmd)"
 image: images/IMG_6336.JPEG
 about:
   template: solana
@@ -9,8 +9,6 @@ sidebar: false
 toc: false
 page-layout: full
 ---
-
-## Ash R. \| [Click here to view my projects!](about.qmd)
 
 Hi, I’m Ash. I’m a junior double majoring in Philosophy and Mathematics-Computer Science with a specialization in Data Science. I’m especially interested in the philosophy of mind and the ways data science and philosophy intersect, particularly when it comes to understanding human behavior and decision-making. Data science lets me explore real-world problems, while my background in philosophy helps me think critically about the implications of what I find.
 

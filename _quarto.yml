@@ -40,8 +40,10 @@ website:
       
 format:
   html:
-    theme: flatly
-    css: styles.css
+    theme:
+      - default
+    #css: styles.css
+      - assets/styles.scss
     grid:
       sidebar-width: 265px
     #toc: true
