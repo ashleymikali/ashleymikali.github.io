@@ -6,7 +6,7 @@ project:
   
 website:
   site-url: https://ashleymikali.com
-  title: "[ash r. ♡](index.qmd)"
+  title: "ash r. ♡"
   
   sidebar:
     style: "docked"
@@ -20,12 +20,12 @@ website:
         contents:
           - text: "Spending Habits Analysis"
             href: projects/spending-behavior-model/spending-habits-analysis.qmd
-          - text: "Spending Habits Prediction"
+          #- text: "Spending Habits Prediction"
+            #href: placeholder.qmd
+          - text: "Diabetes Exploration"
             href: placeholder.qmd
-          - text: "Diabetes Prediction"
-            href: placeholder.qmd
-          - text: "K-Pop Release Radar"
-            href: placeholder.qmd
+          #- text: "K-Pop Release Radar"
+            #href: placeholder.qmd
         
           
   #page-navigation: true
