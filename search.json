@@ -1,27 +1,17 @@
 [
   {
+    "objectID": "assignments/job1/resume1.html",
+    "href": "assignments/job1/resume1.html",
+    "title": "Resume",
+    "section": "",
+    "text": "Back to top"
+  },
+  {
     "objectID": "assignments/job1/jobapp1.html",
     "href": "assignments/job1/jobapp1.html",
     "title": "Job Application 1",
     "section": "",
     "text": "Included are my resume, cover letter and project! Please note that the project is currently undergoing an overhaul and therefore the contents of the project are outdated and are not accurately reflected by the resume. The updated version will be posted soon.\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "assignments/job1/coverletter1.html",
-    "href": "assignments/job1/coverletter1.html",
-    "title": "Cover Letter",
-    "section": "",
-    "text": "Back to top"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to my portfolio!",
-    "section": "",
-    "text": "♡ ash r. | Click here to view my projects! ♡\nHi, I’m Ash. I’m a junior double majoring in Philosophy and Mathematics-Computer Science with a specialization in Data Science. I’m especially interested in the philosophy of mind and the ways data science and philosophy intersect, particularly when it comes to understanding human behavior and decision-making. Data science lets me explore real-world problems, while my background in philosophy helps me think critically about the implications of what I find. I’m also doing a minor in Education, which taught me how to effectively break down complex topics for a variety of audiences.\nWhen I’m not working on school stuff, you can find me playing indie games like Stardew Valley or Moonstone Island. I’m a fan of all sorts of music, from jazz to hyperpop to rock. I also love cozy things; hot chocolate, blankets, and autumn are some of my favorite comforts. If I’m not playing video games or listening to music, I’ll probably be baking cupcakes (they’re easier to share) for my friends or catching up on Severance (no spoilers, please).\n\nYou can find my GitHub here.\n\n\n\n Back to top",
-    "crumbs": [
-      "Home"
-    ]
   },
   {
     "objectID": "projects/spending-behavior-model/spending-habits-analysis.html",
@@ -167,6 +157,16 @@
     ]
   },
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Analyzing Spending Habits With Logistic Regression\n\n\nExploring indicators of spending habit behaviors using logistic regression.\n\n\n\n\n\nNo matching items\n Back to top",
+    "crumbs": [
+      "Projects"
+    ]
+  },
+  {
     "objectID": "placeholder.html",
     "href": "placeholder.html",
     "title": "This, my friend, is what we call a ✨ placeholder page ✨",
@@ -178,19 +178,19 @@
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Projects",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to my portfolio!",
     "section": "",
-    "text": "Analyzing Spending Habits With Logistic Regression\n\n\nExploring indicators of spending habit behaviors using logistic regression.\n\n\n\n\n\nNo matching items\n Back to top",
+    "text": "♡ ash r. | Click here to view my projects! ♡\nHi, I’m Ash. I’m a junior double majoring in Philosophy and Mathematics-Computer Science with a specialization in Data Science. I’m especially interested in the philosophy of mind and the ways data science and philosophy intersect, particularly when it comes to understanding human behavior and decision-making. Data science lets me explore real-world problems, while my background in philosophy helps me think critically about the implications of what I find. I’m also doing a minor in Education, which taught me how to effectively break down complex topics for a variety of audiences.\nWhen I’m not working on school stuff, you can find me playing indie games like Stardew Valley or Moonstone Island. I’m a fan of all sorts of music, from jazz to hyperpop to rock. I also love cozy things; hot chocolate, blankets, and autumn are some of my favorite comforts. If I’m not playing video games or listening to music, I’ll probably be baking cupcakes (they’re easier to share) for my friends or catching up on Severance (no spoilers, please).\n\nYou can find my GitHub here.\n\n\n\n Back to top",
     "crumbs": [
-      "Projects"
+      "Home"
     ]
   },
   {
-    "objectID": "assignments/job1/resume1.html",
-    "href": "assignments/job1/resume1.html",
-    "title": "Resume",
+    "objectID": "assignments/job1/coverletter1.html",
+    "href": "assignments/job1/coverletter1.html",
+    "title": "Cover Letter",
     "section": "",
     "text": "Back to top"
   }
