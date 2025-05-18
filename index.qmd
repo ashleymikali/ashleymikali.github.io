@@ -1,6 +1,6 @@
 ---
 title: "Welcome to my portfolio!"
-image: images/IMG_6336.JPEG
+image: images/my-notion-face-transparent.png
 about:
   template: solana
   image-width: 26em
