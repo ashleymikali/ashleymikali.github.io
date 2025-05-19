@@ -1,6 +1,6 @@
 ---
 title: "Welcome to my portfolio!"
-image: images/my-notion-face-transparent.png
+image: images/bio-icon.png
 about:
   template: solana
   image-width: 26em
