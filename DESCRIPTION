@@ -6,8 +6,10 @@ Depends:
     R (>= 3.1.0)
 Imports: 
     car,
+    doParallel,
     GGally,
     ggformula,
+    kableExtra,
     knitr,
     MASS,
     mosaic,
@@ -15,6 +17,8 @@ Imports:
     olsrr,
     RColorBrewer,
     rmarkdown,
+    rpart.plot,
+    stringr,
     tidymodels,
     tidyverse,
     wacolors
