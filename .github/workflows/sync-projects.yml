@@ -28,6 +28,12 @@ jobs:
           repository: ashleymikali/spending-behavior-model
           path: projects/spending-behavior-model
           
+      - name: Checkout Census Data Hackathon Repository
+        uses: actions/checkout@v3
+        with:
+          repository: ashleymikali/census-data-hackathon
+          path: projects/census-data-hackathon
+          
       - name: List Files in Portfolio Repository
         run: ls -R
         
@@ -38,11 +44,12 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets.PORTFOLIO_TOKEN }}@github.com/ashleymikali/ashleymikali.github.io.git
           
       - name: Remove any .git directories to avoid conflicts
-        run: find . -path "*/spending-behavior-model/.git" -type d -exec rm -rf {} +
+        #run: find . -path "*/spending-behavior-model/.git" -type d -exec rm -rf {} +
+        run: find projects/ -path "*/.git" -type d -exec rm -rf {} +
 
       - name: List Files in Projects Folder for Debugging
         run: |
-          ls -R projects/spending-behavior-model
+          ls -R projects/
           
       - name: Check for Untracked Files
         run: |

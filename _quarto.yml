@@ -26,6 +26,10 @@ website:
             href: placeholder.qmd
           #- text: "K-Pop Release Radar"
             #href: placeholder.qmd
+          - text: "Census Data Hackathon"
+            href: placeholder.qmd
+      - section: "Digital Garden"
+        href: placeholder.qmd
         
           
   #page-navigation: true
