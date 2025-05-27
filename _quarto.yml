@@ -27,7 +27,7 @@ website:
           #- text: "K-Pop Release Radar"
             #href: placeholder.qmd
           - text: "Census Data Hackathon"
-            href: placeholder.qmd
+            href: projects/census-data-hackathon/ar_hackathon.qmd
       - section: "Digital Garden"
         href: placeholder.qmd
         

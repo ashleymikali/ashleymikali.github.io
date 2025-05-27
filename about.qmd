@@ -3,6 +3,7 @@ title: "Projects"
 listing:
     contents:
         - projects/spending-behavior-model/spending-habits-analysis.qmd
+        - projects/census-data-hackathon/ar_hackathon.qmd
     fields: [image, title, description]
     type: grid
     categories: unnumbered
