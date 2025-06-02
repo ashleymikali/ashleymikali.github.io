@@ -19,6 +19,9 @@ editor: visual
 page-layout: full
 ---
 
+
+
+
 # Introduction
 
 This project is my final assignment for *MAT-427: Statistical Machine Learning*, where we were tasked with using data from the U.S. Census Bureau to predict whether or not someone earns more than \$50,000 annually. This project is a hackathon, meaning I had to make trade-offs between accuracy and interpretability. Since accuracy is arguably most important in a hackathon, it was prioritized over interpretability (most evident in the "Final Thoughts" section).
@@ -30,6 +33,9 @@ Since accuracy was my highest priority, I used gradient boosted trees (XGBoost i
 # Getting Started
 
 `tidymodels` is the key package used.
+
+
+
 
 ```{r load-packages}
 #| message: false
@@ -65,11 +71,17 @@ census_test <- read.csv("census_test.csv")
 head(census_train)
 ```
 
+
+
+
 # Data Visualization
 
 ## Preparing Data for Visualization
 
 We will use recipes and workflows to preprocess the data before modeling. Consequently, to not conflict with that, I made a copy of the training data for visualization purposes.
+
+
+
 
 ```{r make-copies}
 #| cache: true
@@ -79,7 +91,13 @@ We will use recipes and workflows to preprocess the data before modeling. Conseq
 census_eda <- census_train
 ```
 
+
+
+
 I made mild changes to our graphing data: I removed trailing whitespace, replaced `?` values with `Unknown`, turned categorical variables into factors, and removed the inconsistent period at the end of some of the income values.
+
+
+
 
 ```{r creating-trimming-factors}
 #| cache: true
@@ -93,22 +111,35 @@ census_eda <- census_eda |>
   mutate(income = as.factor(str_trim(str_replace_all(as.character(income), "\\.", ""))))
 ```
 
+
+
+
 ## Finding the "Best" Predictors
 
 I used feature selection to narrow our list of predictors to the most "meaningful" ones. To achieve this, I used stepwise selection (both forward and backward) and the BIC (Bayesian Information Criterion) to take a model with all predictors and return one with only the most impactful predictors.
+
+
+
 
 ```{r finding-best-predictors}
 #| cache: true
 #| warning: false
 #| code-fold: true
 #| code-summary: "Creating General Model & Stepwise Selection w/ BIC (expand to view code)"
+#| echo: true
 
 eda_model <- glm(income ~ ., data = census_eda, family = binomial)
 n <- nrow(census_eda) # get number of observations for BIC calculation
 model_BIC <- stepAIC(eda_model, direction = "both", k = log(n), trace = FALSE)
 ```
 
+
+
+
 Below, we can see the most impactful predictors:
+
+
+
 
 ```{r display-formula}
 #| code-fold: true
@@ -117,9 +148,15 @@ Below, we can see the most impactful predictors:
 formula(model_BIC)
 ```
 
+
+
+
 ## Univariate Graph
 
 Looking at the distribution of our response variable, we can see that most observations have an annual income of less than \$50,000.
+
+
+
 
 ```{r income-bar}
 #| fig-align: center
@@ -141,9 +178,15 @@ income_univariate <- ggplot(census_eda, aes(x = income)) +
 income_univariate
 ```
 
+
+
+
 ## Bivariate Graphs
 
 Six graphs might be *a bit too much*, but I found the following interesting: the income plotted against type of work, occupation, marital status, sex, age, and hours worked weekly. My eye-opening takeaways were that self-employed individuals with a registered incorporated business and people married to civillian spouses were more likely to make more than \$50,000.
+
+
+
 
 ```{r workclass-occupation-bars}
 #| fig-align: center
@@ -279,17 +322,22 @@ age_bivariate
 hours_bivariate
 ```
 
+
+
+
 # Model Management
 
 ## Preparing Data for Modeling
 
 I created an XGBoost model with the goal of tuning its hyperparameters for better performance.
 
+
+
+
 ```{r making-model}
 #| cache: true
 #| code-fold: false
 #| code-summary: "Creating XGBoost Model (expand to view code)"
-#| eval: false
 
 boosted_model <- boost_tree(trees = tune(), 
                             learn_rate = tune(), 
@@ -299,13 +347,18 @@ boosted_model <- boost_tree(trees = tune(),
   set_mode("classification")
 ```
 
+
+
+
 I treated `?` values as `NA` so they could be imputed. I also converted categorical variables into factors, ensured numeric predictors were integers, used the median to impute numeric values, and the mode for categorical ones. Finally, I applied dummy (one-hot) encoding so categorical variables could be modeled numerically.
+
+
+
 
 ```{r making-recipe}
 #| cache: true
 #| code-fold: false
 #| code-summary: "Creating Model Recipe (expand to view code)"
-#| eval: false
 
 boosted_recipe <- recipe(income ~ ., data = census_train) |>
   step_mutate(across(where(is.character) | where(is.factor), ~ as.factor(stringr::str_trim(ifelse(as.character(.x) == "?", NA, as.character(.x)))))) |>
@@ -317,26 +370,36 @@ boosted_recipe <- recipe(income ~ ., data = census_train) |>
   step_dummy(all_nominal_predictors(), one_hot = TRUE)
 ```
 
+
+
+
 I made a workflow to put our recipe and model together so they could easily be used with the training (and later the test) set.
+
+
+
 
 ```{r making-workflow}
 #| cache: true
 #| code-fold: false
 #| code-summary: "Creating Workflow To Combine Model and Recipe (expand to view code)"
-#| eval: false
 
 boosted_workflow <- workflow() |>
   add_model(boosted_model) |>
   add_recipe(boosted_recipe)
 ```
 
+
+
+
 I defined a grid of hyperparameter values for my XGBoost model using `grid_space_filling()`, which selects a diverse but efficient sample of combinations. I then applied 5-fold cross-validation (with one repeat) to evaluate each combination, stratifying by income to preserve class distribution across folds.
+
+
+
 
 ```{r grid-cv}
 #| cache: true
 #| code-fold: false
 #| code-summary: "Using a Grid + Cross Validation (expand to view code)"
-#| eval: false
 
 boosted_grid <- grid_space_filling(trees(range = c(20, 200)),
                                    tree_depth(range = c(1, 15)),
@@ -347,14 +410,20 @@ boosted_grid <- grid_space_filling(trees(range = c(20, 200)),
 census_folds = vfold_cv(census_train, v = 5, repeats = 1, strata = income)
 ```
 
+
+
+
 I used parallel processing to speed up tuning across my grid of hyperparameters. Using `tune_grid()`, I evaluated each model combination defined earlier using 5-fold cross-validation. The process was parallelized across 9 cores to reduce runtime, and the cluster was stopped afterward to free system resources.
+
+
+
 
 ```{r tune-grid}
 #| cache: true
 #| warning: false
 #| code-fold: false
 #| code-summary: "Using Tune Grid (expand to view code)"
-#| eval: false
+#| echo: true
 
 cl <- makePSOCKcluster(9)
 registerDoParallel(cl)
@@ -368,26 +437,36 @@ tuning_results <- tune_grid(
 stopCluster(cl)
 ```
 
+
+
+
 After tuning, I selected the hyperparameter combination that gave the highest accuracy and used it to train the final model.
+
+
+
 
 ```{r fitting-tuned-model}
 #| cache: true
 #| code-fold: true
 #| code-summary: "Fitting Model w/ Tuned Parameters (expand to view code)"
-#| eval: false
 
 boosted_fit <- boosted_workflow |>
   finalize_workflow(select_best(tuning_results, metric = "accuracy")) |>
   fit(census_train)
 ```
 
+
+
+
 Finally, I used the tuned model to generate predictions on the test set. Since the test set didn’t include income labels, I converted the predicted class into a binary format (1 for “\>50K”, 0 otherwise) and exported the results as a `.csv` file.
+
+
+
 
 ```{r making-predictions}
 #| cache: true
 #| code-fold: false
 #| code-summary: "Making Predictions (expand to view code)"
-#| eval: false
 
 prediction_vector <- predict(boosted_fit, new_data = census_test, type = "class") |>
   mutate(income = ifelse(.pred_class %in% c(">50K", ">50K."), 1, 0)) |>
@@ -395,6 +474,9 @@ prediction_vector <- predict(boosted_fit, new_data = census_test, type = "class"
 
 write.csv(prediction_vector, "my_predictions.csv", row.names = FALSE)
 ```
+
+
+
 
 # Final Thoughts
 
@@ -413,3 +495,4 @@ Gradient boosted trees are *computationally expensive*, meaning every mistake an
 # Reflection
 
 I admittedly did not use my time wisely when doing this project, so I assume that under different circumstances I probably would have given certain decisions more thought (like increasing the number of repeats for cross validation, though I am unsure if that would necessarily benefit the accuracy) or had different solutions to certain problems. I do think, however, that I did a solid job, all things considered. I also learned the hard way about the importance of caching [*everything*]{.underline}.
+
