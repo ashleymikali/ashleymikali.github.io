@@ -289,6 +289,7 @@ I created an XGBoost model with the goal of tuning its hyperparameters for bette
 #| cache: true
 #| code-fold: false
 #| code-summary: "Creating XGBoost Model (expand to view code)"
+#| eval: false
 
 boosted_model <- boost_tree(trees = tune(), 
                             learn_rate = tune(), 
@@ -304,6 +305,7 @@ I treated `?` values as `NA` so they could be imputed. I also converted categori
 #| cache: true
 #| code-fold: false
 #| code-summary: "Creating Model Recipe (expand to view code)"
+#| eval: false
 
 boosted_recipe <- recipe(income ~ ., data = census_train) |>
   step_mutate(across(where(is.character) | where(is.factor), ~ as.factor(stringr::str_trim(ifelse(as.character(.x) == "?", NA, as.character(.x)))))) |>
@@ -321,6 +323,7 @@ I made a workflow to put our recipe and model together so they could easily be u
 #| cache: true
 #| code-fold: false
 #| code-summary: "Creating Workflow To Combine Model and Recipe (expand to view code)"
+#| eval: false
 
 boosted_workflow <- workflow() |>
   add_model(boosted_model) |>
@@ -333,6 +336,7 @@ I defined a grid of hyperparameter values for my XGBoost model using `grid_space
 #| cache: true
 #| code-fold: false
 #| code-summary: "Using a Grid + Cross Validation (expand to view code)"
+#| eval: false
 
 boosted_grid <- grid_space_filling(trees(range = c(20, 200)),
                                    tree_depth(range = c(1, 15)),
@@ -350,6 +354,7 @@ I used parallel processing to speed up tuning across my grid of hyperparameters.
 #| warning: false
 #| code-fold: false
 #| code-summary: "Using Tune Grid (expand to view code)"
+#| eval: false
 
 cl <- makePSOCKcluster(9)
 registerDoParallel(cl)
@@ -369,6 +374,7 @@ After tuning, I selected the hyperparameter combination that gave the highest ac
 #| cache: true
 #| code-fold: true
 #| code-summary: "Fitting Model w/ Tuned Parameters (expand to view code)"
+#| eval: false
 
 boosted_fit <- boosted_workflow |>
   finalize_workflow(select_best(tuning_results, metric = "accuracy")) |>
@@ -381,6 +387,7 @@ Finally, I used the tuned model to generate predictions on the test set. Since t
 #| cache: true
 #| code-fold: false
 #| code-summary: "Making Predictions (expand to view code)"
+#| eval: false
 
 prediction_vector <- predict(boosted_fit, new_data = census_test, type = "class") |>
   mutate(income = ifelse(.pred_class %in% c(">50K", ">50K."), 1, 0)) |>
