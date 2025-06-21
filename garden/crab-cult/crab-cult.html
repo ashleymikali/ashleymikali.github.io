@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ash r.">
+<meta name="dcterms.date" content="2025-06-04">
+<meta name="description" content="Reflecting on why I prefer R over Python for data-related tasks. TLDR: structure > abstraction.">
 
-<title>Cover Letter – ash r. ♡</title>
+<title>Maybe I, Too, Am a Member of the Crustacean Cult – ash r. ♡</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -39,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-1cd6e7b9904c8f99dff037e96c6b9921.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7b5ca057b89f5a60342774c85bc970f4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -80,9 +118,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      ash r. ♡
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../garden/garden-home.html">Digital Garden</a></li><li class="breadcrumb-item"><a href="../../garden/crab-cult/crab-cult.html">Why R &gt; Python IMO</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -140,14 +176,14 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../garden/garden-home.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Digital Garden</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../garden/crab-cult/crab-cult.html" class="sidebar-item-text sidebar-link">
+  <a href="../../garden/crab-cult/crab-cult.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Why R &gt; Python IMO</span></a>
   </div>
 </li>
@@ -158,20 +194,48 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#r-is-easier-than-python-huh" id="toc-r-is-easier-than-python-huh" class="nav-link active" data-scroll-target="#r-is-easier-than-python-huh">R is Easier than Python? Huh?</a></li>
+  <li><a href="#my-programming-background" id="toc-my-programming-background" class="nav-link" data-scroll-target="#my-programming-background">My Programming Background</a></li>
+  <li><a href="#how-it-all-comes-together" id="toc-how-it-all-comes-together" class="nav-link" data-scroll-target="#how-it-all-comes-together">How It All Comes Together</a></li>
+  <li><a href="#enter-the-crab-cult" id="toc-enter-the-crab-cult" class="nav-link" data-scroll-target="#enter-the-crab-cult">Enter the Crab Cult</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ashleymikali/ashleymikali.github.io/blob/main/garden/crab-cult/crab-cult.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ashleymikali/ashleymikali.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../garden/garden-home.html">Digital Garden</a></li><li class="breadcrumb-item"><a href="../../garden/crab-cult/crab-cult.html">Why R &gt; Python IMO</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Cover Letter</h1>
+<h1 class="title">Maybe I, Too, Am a Member of the Crustacean Cult</h1>
+</div>
+
+<div>
+  <div class="description">
+    Reflecting on why I prefer R over Python for data-related tasks. TLDR: structure &gt; abstraction.
+  </div>
 </div>
 
 
+<div class="quarto-title-meta column-body">
 
-<div class="quarto-title-meta column-page-right">
-
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>ash r. </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 4, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -181,10 +245,119 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<object data="ar_coverletter1.pdf" type="application/PDF" width="100%" height="100%" style="min-height:100vh;">
-</object>
+<section id="r-is-easier-than-python-huh" class="level2">
+<h2 class="anchored" data-anchor-id="r-is-easier-than-python-huh">R is Easier than Python? Huh?</h2>
+<p>I did <del>oral exams disguised with a mustache and a hat</del> mock job interviews in my <em>Statistical Machine Learning</em> class this past semester. I listed both Python and R (along with relevant libraries and packages) on my resume, and one question I had NOT considered before came up towards the start of my first interview.</p>
+<p>I’m paraphrasing here, but the gist is: “I see that you have both Python and R on your resume… which do you prefer, and why?”</p>
+<p>I think I deserve a silver medal in bullshitting. I’m a modest person, so I can acknowledge that my performance wasn’t worthy of a gold medal.</p>
+<p>But anyways, I was only <em>half</em> bullshitting with my answer. And even then, I wasn’t really bullshitting. I <em>did</em> answer to the best of my abilities. But man, did it feel like I was bullshitting my teacher (if you’re reading this, I’m sorry).</p>
+<p>I gave the only answer I could conceive of: “Because R feels easier to me.”</p>
+<p>I walked right into a trap with that one. Notice I didn’t say <em>better</em> (which would have given me so much ammo for bullshitting), rather, I said <em>easier</em>. My teacher hit me back with the “but why?” And, I mean, I can’t blame him for that. He made valid points: Python is a beginner-friendly language, and most people consider it to be more straightforward and intuitive. Naturally, most students in my class would likely say <code>scikit-learn</code> &gt; <code>tidymodels</code> (I promise this is NOT an “I’m not like other programmers!” article).</p>
+<p>Oh, did I mention that I haven’t written anything computational-statistics-wise with Python in <em>years</em>? My last (and first, and only) experience in this domain was with a <em>Statistics for Data Science with Python</em> MOOC I took on Coursera in… 2022 (late 2021, really), along with some tinkering with <code>scikit-learn</code> I did shortly thereafter.</p>
+<p>Now, now, you just have to believe me on that one. I promise I’m not exercising my bullshitting skills again right now. I have proof!</p>
+<p><img src="ds-certificate.png" class="img-fluid"></p>
+<p>Anyways! With that out of the way, let’s establish a few things:</p>
+<ul>
+<li><p>I have <em>some</em> experience with using Python for statistical work.</p></li>
+<li><p>My initial introduction to computational statistics was in late 2021 (I had barely just turned 18! Time flies!).</p></li>
+<li><p>Python was <em>not</em> my introduction to coding or computer science as a whole (more on this in a minute).</p></li>
+<li><p>I have more experience with R (multiple semesters, multiple months) for this type of work than I do with Python (a few weeks at best like 3 years ago).</p></li>
+<li><p>I was being honest about finding R to be easier for me. What I didn’t know and somewhat bullshitted on the spot was <em>why</em> that was the case.</p></li>
+</ul>
+<p>The entire point of this article (that will only be read by future me lol) is to revisit that last point and figure out why. I’m pretty curious about it. I pretty much just fumbled around to my teacher, saying, “I don’t know, it just feels easier to me,” in different ways with no actual substance. Well, let’s find that substance now!</p>
+</section>
+<section id="my-programming-background" class="level2">
+<h2 class="anchored" data-anchor-id="my-programming-background">My Programming Background</h2>
+<p>My earliest serious experience with programming was when I was around 15 years old, when I learned… Pascal. (I’ll edit this in the future after I manage to find receipts from… so many years ago.)</p>
+<p>So, excluding HTML, Swift, and SQL, my experience went something like this:</p>
+<ul>
+<li><p>Pascal, then</p></li>
+<li><p>C, then</p></li>
+<li><p>Python</p></li>
+</ul>
+<p>One of these is so very obviously not like the others, right? Right????? Everyone, point your finger at the <em>one language</em> that isn’t as explicit and structured as the others.</p>
+<p>I used Pascal and C in high school. I didn’t touch Python until I did the MOOC I mentioned earlier, and didn’t <em>really</em> get into it until I started college.</p>
+<p>And man, did I struggle with Python when I just started. I had the programming fundamentals locked down to some extent (at least for the <em>Introduction to Computer Science</em> class), but going from something as explicit as C to something like Python was a bit challenging.</p>
+<p>My teacher said that I was making my code needlessly complex and that I was using <em>“C brain”</em>.</p>
+</section>
+<section id="how-it-all-comes-together" class="level2">
+<h2 class="anchored" data-anchor-id="how-it-all-comes-together">How It All Comes Together</h2>
+<p>I’ve adapted somewhat to Python now, but I think the reason I find R to be easier is because of my <em>“C brain”</em>, that is, because I got my start using more structured and explicit languages, and R gives me that kind of space.</p>
+<p>Hear me out: Yes, R is a high-level, dynamic, and interpreted language. Not too different from Python, I guess. But R encourages more structure and explicitness than Python does; the latter is designed to be more intuitive by using natural language and a lot of magic behind the scenes.</p>
+<p>I feel more confident using <code>tidymodels</code> than <code>scikit-learn</code>. Boil that down to familiarity in structure, I suppose.</p>
+</section>
+<section id="enter-the-crab-cult" class="level2">
+<h2 class="anchored" data-anchor-id="enter-the-crab-cult">Enter the Crab Cult</h2>
+<p>Now, you might be wondering, “How on Earth is the title relevant?” And that, dear <del>future me</del> reader, is a valid question.</p>
+<p>For the last few months, I’ve been fascinated by Rust. And I, unsurprisingly, now want to rewrite everything in Rust. I’ll let the following image explain this for me:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.reddit.com/r/ProgrammerHumor/comments/1hiug16/heyletsrewritetheinternettorust/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button"><img src="rustification.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="530"></a></p>
+</figure>
+</div>
+<p>BUT WHY?????????</p>
+<p>Because Rust has more in common with C than Python (in my uneducated opinion, which could very well be wrong). AND IT LOOKS FUN!!!!</p>
+<p>This:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode rust code-with-copy"><code class="sourceCode rust"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">{</span>Rust<span class="op">}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> AboutMe <span class="op">{</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    pronouns<span class="op">:</span> <span class="dt">String</span><span class="op">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    majors<span class="op">:</span> <span class="dt">Vec</span><span class="op">&lt;</span><span class="dt">String</span><span class="op">&gt;,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    specialization<span class="op">:</span> <span class="dt">String</span><span class="op">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    languages<span class="op">:</span> <span class="dt">Vec</span><span class="op">&lt;</span><span class="dt">String</span><span class="op">&gt;,</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    hobbies<span class="op">:</span> <span class="dt">Vec</span><span class="op">&lt;</span><span class="dt">String</span><span class="op">&gt;,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> ash <span class="op">=</span> AboutMe <span class="op">{</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        pronouns<span class="op">:</span> <span class="dt">String</span><span class="pp">::</span>from(<span class="st">"She/her"</span>)<span class="op">,</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        majors<span class="op">:</span> <span class="pp">vec!</span>[</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>            <span class="dt">String</span><span class="pp">::</span>from(<span class="st">"Computer Science-Mathematics"</span>)<span class="op">,</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>            <span class="dt">String</span><span class="pp">::</span>from(<span class="st">"Philosophy"</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        ]<span class="op">,</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        specialization<span class="op">:</span> <span class="dt">String</span><span class="pp">::</span>from(<span class="st">"Data Science"</span>)<span class="op">,</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        languages<span class="op">:</span> <span class="pp">vec!</span>[</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>            <span class="dt">String</span><span class="pp">::</span>from(<span class="st">"Python"</span>)<span class="op">,</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>            <span class="dt">String</span><span class="pp">::</span>from(<span class="st">"Rust"</span>)<span class="op">,</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>            <span class="dt">String</span><span class="pp">::</span>from(<span class="st">"SQL"</span>)<span class="op">,</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>            <span class="dt">String</span><span class="pp">::</span>from(<span class="st">"R"</span>)<span class="op">,</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>            <span class="dt">String</span><span class="pp">::</span>from(<span class="st">"C"</span>)<span class="op">,</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        ]<span class="op">,</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        hobbies<span class="op">:</span> <span class="pp">vec!</span>[</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>            <span class="dt">String</span><span class="pp">::</span>from(<span class="st">"Music Curation"</span>)<span class="op">,</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>            <span class="dt">String</span><span class="pp">::</span>from(<span class="st">"Video Games"</span>)<span class="op">,</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>            <span class="dt">String</span><span class="pp">::</span>from(<span class="st">"Reading"</span>)<span class="op">,</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>        ]<span class="op">,</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="op">};</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>is longer, sure, but so much more explicit than this:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>{Python}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> AboutMe:</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.name <span class="op">=</span> <span class="st">"ash"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.pronouns <span class="op">=</span> <span class="st">"She/her"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.majors <span class="op">=</span> [<span class="st">"Computer Science-Mathematics"</span>, <span class="st">"Philosophy"</span>]</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.specialization <span class="op">=</span> <span class="st">"Data Science"</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.languages <span class="op">=</span> [<span class="st">"Python"</span>, <span class="st">"Rust"</span>, <span class="st">"SQL"</span>, <span class="st">"R"</span>, <span class="st">"C"</span>]</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.hobbies <span class="op">=</span> [<span class="st">"Music Curation"</span>, <span class="st">"Video Games"</span>, <span class="st">"Reading"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Will you catch me trying to use Rust or R with SQL any time soon? Of course not, I’m trying to decompress this summer, not give myself extra stress (which means I will likely do this at 3 am on a random Tuesday morning when I feel unhinged). I can admit that the Python + SQL combo is pretty good, though, in my experience.</p>
+<p>Alas, if you’re still wondering how crabs or cults relate to any of this, it’s because:</p>
+<ol type="1">
+<li>Some say that Rust has a cult following;</li>
+<li>Rust’s mascot is a crab (which I think is better than Python’s mascot, so can I give it bonus points for that?).</li>
+</ol>
+<p>Anyways, let’s close this ramble with a classic: the crab rave! Good times. I felt so giddy and nostalgic watching this for the first time in years 😭.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LDU_Txk06tM?si=jk8s8wzO0-A--w0K" style="display: block; margin: 0 auto;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+<hr>
+<p>Alright, I’m signing off for real now. I have wise crabs to consult.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.reddit.com/r/ProgrammerHumor/comments/15ppqic/learnrust/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button"><img src="consult-crab.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="480"></a></p>
+</figure>
+</div>
+<pre style="text-align: center"><code>· · ─ ·𖥸· ─ · ·</code></pre>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -594,7 +767,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/ashleymikali/ashleymikali.github.io/blob/main/assignments/job1/coverletter1.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ashleymikali/ashleymikali.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ashleymikali/ashleymikali.github.io/blob/main/garden/crab-cult/crab-cult.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ashleymikali/ashleymikali.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Made with Quarto &amp; hot cocoa ☕️🧸🤎</p>
 </div>

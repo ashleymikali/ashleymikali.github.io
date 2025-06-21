@@ -1,5 +1,11 @@
 [
   {
+    "listing": "/garden/garden-home.html",
+    "items": [
+      "/garden/crab-cult/crab-cult.html"
+    ]
+  },
+  {
     "listing": "/about.html",
     "items": [
       "/projects/spending-behavior-model/spending-habits-analysis.html",

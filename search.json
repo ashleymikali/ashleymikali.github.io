@@ -1,10 +1,13 @@
 [
   {
-    "objectID": "assignments/job1/resume1.html",
-    "href": "assignments/job1/resume1.html",
-    "title": "Resume",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to my portfolio!",
     "section": "",
-    "text": "Back to top"
+    "text": "♡ ash r. | Click here to view my projects! ♡\nHi, I’m Ash. I’m a junior double majoring in Philosophy and Mathematics-Computer Science with a specialization in Data Science. I’m especially interested in the philosophy of mind and the ways data science and philosophy intersect, particularly when it comes to understanding human behavior and decision-making. Data science lets me explore real-world problems, while my background in philosophy helps me think critically about the implications of what I find.\nWhen I’m not working on school stuff, you can find me playing indie games like Stardew Valley or Balatro. I’m a fan of all sorts of music, from jazz to hyperpop to rock. I also love cozy things; hot chocolate, blankets, and autumn are some of my favorite comforts. If I’m not playing video games or listening to music, I’ll probably be baking cupcakes (they’re easier to share) for my friends or reading articles from The New York Times (I have a soft spot for Modern Love especially), The Atlantic, or WIRED.\n\nYou can find my GitHub here.\n\n\n\n Back to top",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
     "objectID": "assignments/job1/jobapp1.html",
@@ -12,6 +15,23 @@
     "title": "Job Application 1",
     "section": "",
     "text": "Included are my resume, cover letter and project! Please note that the project is currently undergoing an overhaul and therefore the contents of the project are outdated and are not accurately reflected by the resume. The updated version will be posted soon.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "placeholder.html",
+    "href": "placeholder.html",
+    "title": "This, my friend, is what we call a ✨ placeholder page ✨",
+    "section": "",
+    "text": "Back to top"
+  },
+  {
+    "objectID": "garden/garden-home.html",
+    "href": "garden/garden-home.html",
+    "title": "Ash’s Digital Garden",
+    "section": "",
+    "text": "Collection of thoughts and long-form written pieces. Usually about programming, artificial intelligence, and/or philosophy.\nTo be honest, this collection exists so I can become more comfortable with expressing my opinions. My hope is to make my philosophy senior thesis not feel daunting when the time comes :).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMaybe I, Too, Am a Member of the Crustacean Cult\n\n\nReflecting on why I prefer R over Python for data-related tasks. TLDR: structure &gt; abstraction.\n\n\n\nJun 4, 2025\n\n\n\n\n\n\nNo matching items\n Back to top",
+    "crumbs": [
+      "Digital Garden"
+    ]
   },
   {
     "objectID": "projects/census-data-hackathon/ar_hackathon.html",
@@ -110,17 +130,6 @@
     "crumbs": [
       "Projects",
       "Census Data Hackathon"
-    ]
-  },
-  {
-    "objectID": "placeholder.html",
-    "href": "placeholder.html",
-    "title": "This, my friend, is what we call a ✨ placeholder page ✨",
-    "section": "",
-    "text": "Back to top",
-    "crumbs": [
-      "Projects",
-      "Diabetes Exploration"
     ]
   },
   {
@@ -277,14 +286,66 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to my portfolio!",
+    "objectID": "garden/crab-cult/crab-cult.html",
+    "href": "garden/crab-cult/crab-cult.html",
+    "title": "Maybe I, Too, Am a Member of the Crustacean Cult",
     "section": "",
-    "text": "♡ ash r. | Click here to view my projects! ♡\nHi, I’m Ash. I’m a junior double majoring in Philosophy and Mathematics-Computer Science with a specialization in Data Science. I’m especially interested in the philosophy of mind and the ways data science and philosophy intersect, particularly when it comes to understanding human behavior and decision-making. Data science lets me explore real-world problems, while my background in philosophy helps me think critically about the implications of what I find. I’m also doing a minor in Education, which taught me how to effectively break down complex topics for a variety of audiences.\nWhen I’m not working on school stuff, you can find me playing indie games like Stardew Valley or Moonstone Island. I’m a fan of all sorts of music, from jazz to hyperpop to rock. I also love cozy things; hot chocolate, blankets, and autumn are some of my favorite comforts. If I’m not playing video games or listening to music, I’ll probably be baking cupcakes (they’re easier to share) for my friends or catching up on Severance (no spoilers, please).\n\nYou can find my GitHub here.\n\n\n\n Back to top",
+    "text": "I did oral exams disguised with a mustache and a hat mock job interviews in my Statistical Machine Learning class this past semester. I listed both Python and R (along with relevant libraries and packages) on my resume, and one question I had NOT considered before came up towards the start of my first interview.\nI’m paraphrasing here, but the gist is: “I see that you have both Python and R on your resume… which do you prefer, and why?”\nI think I deserve a silver medal in bullshitting. I’m a modest person, so I can acknowledge that my performance wasn’t worthy of a gold medal.\nBut anyways, I was only half bullshitting with my answer. And even then, I wasn’t really bullshitting. I did answer to the best of my abilities. But man, did it feel like I was bullshitting my teacher (if you’re reading this, I’m sorry).\nI gave the only answer I could conceive of: “Because R feels easier to me.”\nI walked right into a trap with that one. Notice I didn’t say better (which would have given me so much ammo for bullshitting), rather, I said easier. My teacher hit me back with the “but why?” And, I mean, I can’t blame him for that. He made valid points: Python is a beginner-friendly language, and most people consider it to be more straightforward and intuitive. Naturally, most students in my class would likely say scikit-learn &gt; tidymodels (I promise this is NOT an “I’m not like other programmers!” article).\nOh, did I mention that I haven’t written anything computational-statistics-wise with Python in years? My last (and first, and only) experience in this domain was with a Statistics for Data Science with Python MOOC I took on Coursera in… 2022 (late 2021, really), along with some tinkering with scikit-learn I did shortly thereafter.\nNow, now, you just have to believe me on that one. I promise I’m not exercising my bullshitting skills again right now. I have proof!\n\nAnyways! With that out of the way, let’s establish a few things:\n\nI have some experience with using Python for statistical work.\nMy initial introduction to computational statistics was in late 2021 (I had barely just turned 18! Time flies!).\nPython was not my introduction to coding or computer science as a whole (more on this in a minute).\nI have more experience with R (multiple semesters, multiple months) for this type of work than I do with Python (a few weeks at best like 3 years ago).\nI was being honest about finding R to be easier for me. What I didn’t know and somewhat bullshitted on the spot was why that was the case.\n\nThe entire point of this article (that will only be read by future me lol) is to revisit that last point and figure out why. I’m pretty curious about it. I pretty much just fumbled around to my teacher, saying, “I don’t know, it just feels easier to me,” in different ways with no actual substance. Well, let’s find that substance now!",
     "crumbs": [
-      "Home"
+      "Digital Garden",
+      "Why R > Python IMO"
     ]
+  },
+  {
+    "objectID": "garden/crab-cult/crab-cult.html#r-is-easier-than-python-huh",
+    "href": "garden/crab-cult/crab-cult.html#r-is-easier-than-python-huh",
+    "title": "Maybe I, Too, Am a Member of the Crustacean Cult",
+    "section": "",
+    "text": "I did oral exams disguised with a mustache and a hat mock job interviews in my Statistical Machine Learning class this past semester. I listed both Python and R (along with relevant libraries and packages) on my resume, and one question I had NOT considered before came up towards the start of my first interview.\nI’m paraphrasing here, but the gist is: “I see that you have both Python and R on your resume… which do you prefer, and why?”\nI think I deserve a silver medal in bullshitting. I’m a modest person, so I can acknowledge that my performance wasn’t worthy of a gold medal.\nBut anyways, I was only half bullshitting with my answer. And even then, I wasn’t really bullshitting. I did answer to the best of my abilities. But man, did it feel like I was bullshitting my teacher (if you’re reading this, I’m sorry).\nI gave the only answer I could conceive of: “Because R feels easier to me.”\nI walked right into a trap with that one. Notice I didn’t say better (which would have given me so much ammo for bullshitting), rather, I said easier. My teacher hit me back with the “but why?” And, I mean, I can’t blame him for that. He made valid points: Python is a beginner-friendly language, and most people consider it to be more straightforward and intuitive. Naturally, most students in my class would likely say scikit-learn &gt; tidymodels (I promise this is NOT an “I’m not like other programmers!” article).\nOh, did I mention that I haven’t written anything computational-statistics-wise with Python in years? My last (and first, and only) experience in this domain was with a Statistics for Data Science with Python MOOC I took on Coursera in… 2022 (late 2021, really), along with some tinkering with scikit-learn I did shortly thereafter.\nNow, now, you just have to believe me on that one. I promise I’m not exercising my bullshitting skills again right now. I have proof!\n\nAnyways! With that out of the way, let’s establish a few things:\n\nI have some experience with using Python for statistical work.\nMy initial introduction to computational statistics was in late 2021 (I had barely just turned 18! Time flies!).\nPython was not my introduction to coding or computer science as a whole (more on this in a minute).\nI have more experience with R (multiple semesters, multiple months) for this type of work than I do with Python (a few weeks at best like 3 years ago).\nI was being honest about finding R to be easier for me. What I didn’t know and somewhat bullshitted on the spot was why that was the case.\n\nThe entire point of this article (that will only be read by future me lol) is to revisit that last point and figure out why. I’m pretty curious about it. I pretty much just fumbled around to my teacher, saying, “I don’t know, it just feels easier to me,” in different ways with no actual substance. Well, let’s find that substance now!",
+    "crumbs": [
+      "Digital Garden",
+      "Why R > Python IMO"
+    ]
+  },
+  {
+    "objectID": "garden/crab-cult/crab-cult.html#my-programming-background",
+    "href": "garden/crab-cult/crab-cult.html#my-programming-background",
+    "title": "Maybe I, Too, Am a Member of the Crustacean Cult",
+    "section": "My Programming Background",
+    "text": "My Programming Background\nMy earliest serious experience with programming was when I was around 15 years old, when I learned… Pascal. (I’ll edit this in the future after I manage to find receipts from… so many years ago.)\nSo, excluding HTML, Swift, and SQL, my experience went something like this:\n\nPascal, then\nC, then\nPython\n\nOne of these is so very obviously not like the others, right? Right????? Everyone, point your finger at the one language that isn’t as explicit and structured as the others.\nI used Pascal and C in high school. I didn’t touch Python until I did the MOOC I mentioned earlier, and didn’t really get into it until I started college.\nAnd man, did I struggle with Python when I just started. I had the programming fundamentals locked down to some extent (at least for the Introduction to Computer Science class), but going from something as explicit as C to something like Python was a bit challenging.\nMy teacher said that I was making my code needlessly complex and that I was using “C brain”.",
+    "crumbs": [
+      "Digital Garden",
+      "Why R > Python IMO"
+    ]
+  },
+  {
+    "objectID": "garden/crab-cult/crab-cult.html#how-it-all-comes-together",
+    "href": "garden/crab-cult/crab-cult.html#how-it-all-comes-together",
+    "title": "Maybe I, Too, Am a Member of the Crustacean Cult",
+    "section": "How It All Comes Together",
+    "text": "How It All Comes Together\nI’ve adapted somewhat to Python now, but I think the reason I find R to be easier is because of my “C brain”, that is, because I got my start using more structured and explicit languages, and R gives me that kind of space.\nHear me out: Yes, R is a high-level, dynamic, and interpreted language. Not too different from Python, I guess. But R encourages more structure and explicitness than Python does; the latter is designed to be more intuitive by using natural language and a lot of magic behind the scenes.\nI feel more confident using tidymodels than scikit-learn. Boil that down to familiarity in structure, I suppose.",
+    "crumbs": [
+      "Digital Garden",
+      "Why R > Python IMO"
+    ]
+  },
+  {
+    "objectID": "garden/crab-cult/crab-cult.html#enter-the-crab-cult",
+    "href": "garden/crab-cult/crab-cult.html#enter-the-crab-cult",
+    "title": "Maybe I, Too, Am a Member of the Crustacean Cult",
+    "section": "Enter the Crab Cult",
+    "text": "Enter the Crab Cult\nNow, you might be wondering, “How on Earth is the title relevant?” And that, dear future me reader, is a valid question.\nFor the last few months, I’ve been fascinated by Rust. And I, unsurprisingly, now want to rewrite everything in Rust. I’ll let the following image explain this for me:\n\n\n\n\n\nBUT WHY?????????\nBecause Rust has more in common with C than Python (in my uneducated opinion, which could very well be wrong). AND IT LOOKS FUN!!!!\nThis:\n{Rust}\nstruct AboutMe {\n    pronouns: String,\n    majors: Vec&lt;String&gt;,\n    specialization: String,\n    languages: Vec&lt;String&gt;,\n    hobbies: Vec&lt;String&gt;,\n}\n\nfn main() {\n    let ash = AboutMe {\n        pronouns: String::from(\"She/her\"),\n        majors: vec![\n            String::from(\"Computer Science-Mathematics\"),\n            String::from(\"Philosophy\")\n        ],\n        specialization: String::from(\"Data Science\"),\n        languages: vec![\n            String::from(\"Python\"),\n            String::from(\"Rust\"),\n            String::from(\"SQL\"),\n            String::from(\"R\"),\n            String::from(\"C\"),\n        ],\n        hobbies: vec![\n            String::from(\"Music Curation\"),\n            String::from(\"Video Games\"),\n            String::from(\"Reading\"),\n        ],\n    };\n}\nis longer, sure, but so much more explicit than this:\n{Python}\nclass AboutMe:\n  def __init__(self):\n    self.name = \"ash\"\n    self.pronouns = \"She/her\"\n    self.majors = [\"Computer Science-Mathematics\", \"Philosophy\"]\n    self.specialization = \"Data Science\"\n    self.languages = [\"Python\", \"Rust\", \"SQL\", \"R\", \"C\"]\n    self.hobbies = [\"Music Curation\", \"Video Games\", \"Reading\"]\nWill you catch me trying to use Rust or R with SQL any time soon? Of course not, I’m trying to decompress this summer, not give myself extra stress (which means I will likely do this at 3 am on a random Tuesday morning when I feel unhinged). I can admit that the Python + SQL combo is pretty good, though, in my experience.\nAlas, if you’re still wondering how crabs or cults relate to any of this, it’s because:\n\nSome say that Rust has a cult following;\nRust’s mascot is a crab (which I think is better than Python’s mascot, so can I give it bonus points for that?).\n\nAnyways, let’s close this ramble with a classic: the crab rave! Good times. I felt so giddy and nostalgic watching this for the first time in years 😭.\n\n\nAlright, I’m signing off for real now. I have wise crabs to consult.\n\n\n\n\n\n· · ─ ·𖥸· ─ · ·",
+    "crumbs": [
+      "Digital Garden",
+      "Why R > Python IMO"
+    ]
+  },
+  {
+    "objectID": "assignments/job1/resume1.html",
+    "href": "assignments/job1/resume1.html",
+    "title": "Resume",
+    "section": "",
+    "text": "Back to top"
   },
   {
     "objectID": "assignments/job1/coverletter1.html",
