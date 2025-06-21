@@ -20,17 +20,26 @@ website:
         contents:
           - text: "Spending Habits Analysis"
             href: projects/spending-behavior-model/spending-habits-analysis.qmd
-          #- text: "Spending Habits Prediction"
-            #href: placeholder.qmd
-          - text: "Diabetes Exploration"
-            href: placeholder.qmd
-          #- text: "K-Pop Release Radar"
-            #href: placeholder.qmd
           - text: "Census Data Hackathon"
             href: projects/census-data-hackathon/ar_hackathon.qmd
+          #- text: "Diabetes Exploration"
+            #href: placeholder.qmd
+          #- text: "K-Pop Release Radar"
+            #href: placeholder.qmd
       - section: "Digital Garden"
-        href: placeholder.qmd
-        
+        href: garden/garden-home.qmd
+        contents:
+          - text: "Why R > Python IMO"
+            href: garden/crab-cult/crab-cult.qmd
+          #- text: "(AI) Hallucination is Humanizing"
+          #- text: "In Memoriam: Pre-AI Literacy"
+          #- text: "Brain Simulate Machine, or Machine Simulate Brain?"
+          #- text: "Humanities == Resistance"
+      #- section: "Growth Archive"
+        #href: reflections/archive-intro.qmd
+        #contents: 
+          #- text: "May 2025: Eudaimonia"
+            #href: reflections/2025-05/reflection-2025-05.qmd
           
   #page-navigation: true
   back-to-top-navigation: true

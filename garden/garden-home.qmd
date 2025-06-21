@@ -1,0 +1,16 @@
+---
+title: "Ash's Digital Garden"
+listing:
+    contents:
+        - crab-cult/crab-cult.qmd
+        #- ai-literacy/ai-literacy.qmd
+        #- humanities-rebellion/humanities-rebellion.qmd
+    sort: "date desc"
+    fields: [image, title, description, date]
+    type: grid
+page-layout: full
+---
+
+Collection of thoughts and long-form written pieces. Usually about programming, artificial intelligence, and/or philosophy.
+
+To be honest, this collection exists so I can become more comfortable with expressing my opinions. My hope is to make my philosophy senior thesis not feel daunting when the time comes :).
