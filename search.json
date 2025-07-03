@@ -1,146 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to my portfolio!",
-    "section": "",
-    "text": "♡ ash r. | Click here to view my projects! ♡\nHi, I’m Ash. I’m a junior double majoring in Philosophy and Mathematics-Computer Science with a specialization in Data Science. I’m especially interested in the philosophy of mind and the ways data science and philosophy intersect, particularly when it comes to understanding human behavior and decision-making. Data science lets me explore real-world problems, while my background in philosophy helps me think critically about the implications of what I find.\nWhen I’m not working on school stuff, you can find me playing indie games like Stardew Valley or Balatro. I’m a fan of all sorts of music, from jazz to hyperpop to rock. I also love cozy things; hot chocolate, blankets, and autumn are some of my favorite comforts. If I’m not playing video games or listening to music, I’ll probably be baking cupcakes (they’re easier to share) for my friends or reading articles from The New York Times (I have a soft spot for Modern Love especially), The Atlantic, or WIRED.\n\nYou can find my GitHub here.\n\n\n\n Back to top",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "assignments/job1/jobapp1.html",
-    "href": "assignments/job1/jobapp1.html",
-    "title": "Job Application 1",
-    "section": "",
-    "text": "Included are my resume, cover letter and project! Please note that the project is currently undergoing an overhaul and therefore the contents of the project are outdated and are not accurately reflected by the resume. The updated version will be posted soon.\n\n\n\n Back to top"
-  },
-  {
     "objectID": "placeholder.html",
     "href": "placeholder.html",
     "title": "This, my friend, is what we call a ✨ placeholder page ✨",
     "section": "",
     "text": "Back to top"
-  },
-  {
-    "objectID": "garden/garden-home.html",
-    "href": "garden/garden-home.html",
-    "title": "Ash’s Digital Garden",
-    "section": "",
-    "text": "Collection of thoughts and long-form written pieces. Usually about programming, artificial intelligence, and/or philosophy.\nTo be honest, this collection exists so I can become more comfortable with expressing my opinions. My hope is to make my philosophy senior thesis not feel daunting when the time comes :).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMaybe I, Too, Am a Member of the Crustacean Cult\n\n\nReflecting on why I prefer R over Python for data-related tasks. TLDR: structure &gt; abstraction.\n\n\n\nJun 4, 2025\n\n\n\n\n\n\nNo matching items\n Back to top",
-    "crumbs": [
-      "Digital Garden"
-    ]
-  },
-  {
-    "objectID": "projects/census-data-hackathon/ar_hackathon.html",
-    "href": "projects/census-data-hackathon/ar_hackathon.html",
-    "title": "Predicting US Census Data with XGBoost",
-    "section": "",
-    "text": "This project is my final assignment for MAT-427: Statistical Machine Learning, where we were tasked with using data from the U.S. Census Bureau to predict whether or not someone earns more than $50,000 annually. This project is a hackathon, meaning I had to make trade-offs between accuracy and interpretability. Since accuracy is arguably most important in a hackathon, it was prioritized over interpretability (most evident in the “Final Thoughts” section).\n\n\nSince accuracy was my highest priority, I used gradient boosted trees (XGBoost in particular) for my model. XGBoost is widely used in competitive machine learning for its ability to efficiently model complex nonlinear relationships while handling missing data and feature interactions with minimal preprocessing.",
-    "crumbs": [
-      "Projects",
-      "Census Data Hackathon"
-    ]
-  },
-  {
-    "objectID": "projects/census-data-hackathon/ar_hackathon.html#rationale",
-    "href": "projects/census-data-hackathon/ar_hackathon.html#rationale",
-    "title": "Predicting US Census Data with XGBoost",
-    "section": "",
-    "text": "Since accuracy was my highest priority, I used gradient boosted trees (XGBoost in particular) for my model. XGBoost is widely used in competitive machine learning for its ability to efficiently model complex nonlinear relationships while handling missing data and feature interactions with minimal preprocessing.",
-    "crumbs": [
-      "Projects",
-      "Census Data Hackathon"
-    ]
-  },
-  {
-    "objectID": "projects/census-data-hackathon/ar_hackathon.html#preparing-data-for-visualization",
-    "href": "projects/census-data-hackathon/ar_hackathon.html#preparing-data-for-visualization",
-    "title": "Predicting US Census Data with XGBoost",
-    "section": "3.1 Preparing Data for Visualization",
-    "text": "3.1 Preparing Data for Visualization\nWe will use recipes and workflows to preprocess the data before modeling. Consequently, to not conflict with that, I made a copy of the training data for visualization purposes.\n\n\nDuplicating Data Frames (expand to view code)\ncensus_eda &lt;- census_train\n\n\nI made mild changes to our graphing data: I removed trailing whitespace, replaced ? values with Unknown, turned categorical variables into factors, and removed the inconsistent period at the end of some of the income values.\n\n\nModifying EDA Data (expand to view code)\ncensus_eda &lt;- census_eda |&gt;\n  mutate(across(where(is.character), ~ str_trim(.))) |&gt;\n  mutate(across(where(is.character), ~ ifelse(. == \"?\", \"Unknown\", .))) |&gt;\n  mutate(across(where(is.character), as.factor)) |&gt;\n  mutate(income = as.factor(str_trim(str_replace_all(as.character(income), \"\\\\.\", \"\"))))",
-    "crumbs": [
-      "Projects",
-      "Census Data Hackathon"
-    ]
-  },
-  {
-    "objectID": "projects/census-data-hackathon/ar_hackathon.html#finding-the-best-predictors",
-    "href": "projects/census-data-hackathon/ar_hackathon.html#finding-the-best-predictors",
-    "title": "Predicting US Census Data with XGBoost",
-    "section": "3.2 Finding the “Best” Predictors",
-    "text": "3.2 Finding the “Best” Predictors\nI used feature selection to narrow our list of predictors to the most “meaningful” ones. To achieve this, I used stepwise selection (both forward and backward) and the BIC (Bayesian Information Criterion) to take a model with all predictors and return one with only the most impactful predictors.\n\n\nCreating General Model & Stepwise Selection w/ BIC (expand to view code)\neda_model &lt;- glm(income ~ ., data = census_eda, family = binomial)\nn &lt;- nrow(census_eda) # get number of observations for BIC calculation\nmodel_BIC &lt;- stepAIC(eda_model, direction = \"both\", k = log(n), trace = FALSE)\n\n\nBelow, we can see the most impactful predictors:\n\n\nDisplaying Most Impactful Predictors (expand to view code)\nformula(model_BIC)\n\n\nincome ~ age + workclass + fnlwgt + education + marital.status + \n    occupation + relationship + sex + capital.gain + capital.loss + \n    hours.per.week",
-    "crumbs": [
-      "Projects",
-      "Census Data Hackathon"
-    ]
-  },
-  {
-    "objectID": "projects/census-data-hackathon/ar_hackathon.html#univariate-graph",
-    "href": "projects/census-data-hackathon/ar_hackathon.html#univariate-graph",
-    "title": "Predicting US Census Data with XGBoost",
-    "section": "3.3 Univariate Graph",
-    "text": "3.3 Univariate Graph\nLooking at the distribution of our response variable, we can see that most observations have an annual income of less than $50,000.\n\n\nIncome Bar Chart (expand to view code)\nincome_univariate &lt;- ggplot(census_eda, aes(x = income)) +\n        geom_bar(fill = \"#412d5e\", alpha = 0.9) +\n        labs(\n          title = \"Distribution of Income\",\n          x = \"Income\",\n          y = \"Number of Observations\") +\n        theme_minimal() +\n        theme(\n          plot.caption = element_text(hjust = 0, size = 10),\n          axis.text.x = element_text(angle = 45, hjust = 1)\n          )\n\nincome_univariate",
-    "crumbs": [
-      "Projects",
-      "Census Data Hackathon"
-    ]
-  },
-  {
-    "objectID": "projects/census-data-hackathon/ar_hackathon.html#bivariate-graphs",
-    "href": "projects/census-data-hackathon/ar_hackathon.html#bivariate-graphs",
-    "title": "Predicting US Census Data with XGBoost",
-    "section": "3.4 Bivariate Graphs",
-    "text": "3.4 Bivariate Graphs\nSix graphs might be a bit too much, but I found the following interesting: the income plotted against type of work, occupation, marital status, sex, age, and hours worked weekly. My eye-opening takeaways were that self-employed individuals with a registered incorporated business and people married to civillian spouses were more likely to make more than $50,000.\n\nWork Type & Occupation Proportional Bar Charts (expand to view code)\nworkclass_bivariate &lt;- ggplot(census_eda, aes(x = workclass, \n                                              fill = income)) + \n  geom_bar(position = \"fill\") + \n  labs(\n    title = \"Relationship Between Income & Work Type\",\n    x = \"Work Type\",\n    y = \"Proportion of Observations\") +\n  theme_minimal() +\n  scale_fill_wa_d(\"puget\") +\n  theme(\n    axis.title.x = element_text(size = 12),\n    axis.title.y = element_text(size = 12),\n    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),\n    axis.text.y = element_text(size = 12),\n    plot.title = element_text(size = 16),\n    legend.title = element_text(size = 14),\n    legend.text = element_text(size = 14))\n\noccupation_bivariate &lt;- ggplot(census_eda, aes(x = occupation, \n                                               fill = income)) + \n  geom_bar(position = \"fill\") + \n  labs(\n    title = \"Relationship Between Income & Occupation\",\n    x = \"Occupation\",\n    y = \"Proportion of Observations\") +\n  theme_minimal() +\n  scale_fill_wa_d(\"puget\") +\n  theme(\n    axis.title.x = element_text(size = 12),\n    axis.title.y = element_text(size = 12),\n    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),\n    axis.text.y = element_text(size = 12),\n    plot.title = element_text(size = 16),\n    legend.title = element_text(size = 14),\n    legend.text = element_text(size = 14))\n\nworkclass_bivariate\noccupation_bivariate\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMarital Status & Sex Proportional Bar Charts (expand to view code)\nmarriage_bivariate &lt;- ggplot(census_eda, aes(x = marital.status, \n                                              fill = income)) + \n  geom_bar(position = \"fill\") + \n  labs(\n    title = \"Relationship Between Income & Marital Status\",\n    x = \"Marital Status\",\n    y = \"Proportion of Observations\") +\n  theme_minimal() +\n  scale_fill_wa_d(\"puget\") +\n  theme(\n    axis.title.x = element_text(size = 12),\n    axis.title.y = element_text(size = 12),\n    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),\n    axis.text.y = element_text(size = 12),\n    plot.title = element_text(size = 16),\n    legend.title = element_text(size = 14),\n    legend.text = element_text(size = 14))\n\nsex_bivariate &lt;- ggplot(census_eda, aes(x = sex, \n                                               fill = income)) + \n  geom_bar(position = \"fill\") + \n  labs(\n    title = \"Relationship Between Income & Sex\",\n    x = \"Sex\",\n    y = \"Proportion of Observations\") +\n  theme_minimal() +\n  scale_fill_wa_d(\"puget\") +\n  theme(\n    axis.title.x = element_text(size = 12),\n    axis.title.y = element_text(size = 12),\n    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),\n    axis.text.y = element_text(size = 12),\n    plot.title = element_text(size = 16),\n    legend.title = element_text(size = 14),\n    legend.text = element_text(size = 14))\n\nmarriage_bivariate\nsex_bivariate\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAge & Hours Worked Weekly Proportional Box Plots (expand to view code)\nage_bivariate &lt;- ggplot(census_eda, aes(x = income, y = age, fill = income)) +\n  geom_boxplot() +\n  labs(title = \"Relationship Between Income & Age\",\n       x = \"Income\",\n       y = \"Age\") +\n  theme_minimal() +\n  scale_fill_wa_d(\"puget\") +\n  theme(\n    axis.title.x = element_text(size = 12),\n    axis.title.y = element_text(size = 12),\n    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),\n    axis.text.y = element_text(size = 12),\n    plot.title = element_text(size = 14),\n    legend.title = element_text(size = 14),\n    legend.text = element_text(size = 14))\n\nhours_bivariate &lt;- ggplot(census_eda, aes(x = income, y = hours.per.week, fill = income)) +\n  geom_boxplot() +\n  labs(title = \"Relationship Between Income & Hours worked Weekly\",\n       x = \"Income\",\n       y = \"Hours Worked Weekly\") +\n  theme_minimal() +\n  scale_fill_wa_d(\"puget\") +\n  theme(\n    axis.title.x = element_text(size = 12),\n    axis.title.y = element_text(size = 12),\n    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),\n    axis.text.y = element_text(size = 12),\n    plot.title = element_text(size = 14),\n    legend.title = element_text(size = 14),\n    legend.text = element_text(size = 14))\n\nage_bivariate\nhours_bivariate",
-    "crumbs": [
-      "Projects",
-      "Census Data Hackathon"
-    ]
-  },
-  {
-    "objectID": "projects/census-data-hackathon/ar_hackathon.html#preparing-data-for-modeling",
-    "href": "projects/census-data-hackathon/ar_hackathon.html#preparing-data-for-modeling",
-    "title": "Predicting US Census Data with XGBoost",
-    "section": "4.1 Preparing Data for Modeling",
-    "text": "4.1 Preparing Data for Modeling\nI created an XGBoost model with the goal of tuning its hyperparameters for better performance.\n\nboosted_model &lt;- boost_tree(trees = tune(), \n                            learn_rate = tune(), \n                            tree_depth = tune(), \n                            min_n = tune()) |&gt;\n  set_engine(\"xgboost\") |&gt;\n  set_mode(\"classification\")\n\nI treated ? values as NA so they could be imputed. I also converted categorical variables into factors, ensured numeric predictors were integers, used the median to impute numeric values, and the mode for categorical ones. Finally, I applied dummy (one-hot) encoding so categorical variables could be modeled numerically.\n\nboosted_recipe &lt;- recipe(income ~ ., data = census_train) |&gt;\n  step_mutate(across(where(is.character) | where(is.factor), ~ as.factor(stringr::str_trim(ifelse(as.character(.x) == \"?\", NA, as.character(.x)))))) |&gt;\n  step_indicate_na(all_predictors()) |&gt;\n  step_zv(all_predictors()) |&gt;\n  step_integer(all_numeric_predictors()) |&gt;\n  step_impute_median(all_numeric_predictors()) |&gt;\n  step_impute_mode(all_nominal_predictors()) |&gt;\n  step_dummy(all_nominal_predictors(), one_hot = TRUE)\n\nI made a workflow to put our recipe and model together so they could easily be used with the training (and later the test) set.\n\nboosted_workflow &lt;- workflow() |&gt;\n  add_model(boosted_model) |&gt;\n  add_recipe(boosted_recipe)\n\nI defined a grid of hyperparameter values for my XGBoost model using grid_space_filling(), which selects a diverse but efficient sample of combinations. I then applied 5-fold cross-validation (with one repeat) to evaluate each combination, stratifying by income to preserve class distribution across folds.\n\nboosted_grid &lt;- grid_space_filling(trees(range = c(20, 200)),\n                                   tree_depth(range = c(1, 15)),\n                                   learn_rate(range = c(-10,-1)),\n                                   min_n(range = c(2, 40)),\n                                   size = 50)\n\ncensus_folds = vfold_cv(census_train, v = 5, repeats = 1, strata = income)\n\nI used parallel processing to speed up tuning across my grid of hyperparameters. Using tune_grid(), I evaluated each model combination defined earlier using 5-fold cross-validation. The process was parallelized across 9 cores to reduce runtime, and the cluster was stopped afterward to free system resources.\n\ncl &lt;- makePSOCKcluster(9)\nregisterDoParallel(cl)\n\ntuning_results &lt;- tune_grid(\n  boosted_workflow,\n  resamples = census_folds,\n  grid = boosted_grid\n)\n\nstopCluster(cl)\n\nAfter tuning, I selected the hyperparameter combination that gave the highest accuracy and used it to train the final model.\n\n\nFitting Model w/ Tuned Parameters (expand to view code)\nboosted_fit &lt;- boosted_workflow |&gt;\n  finalize_workflow(select_best(tuning_results, metric = \"accuracy\")) |&gt;\n  fit(census_train)\n\n\nFinally, I used the tuned model to generate predictions on the test set. Since the test set didn’t include income labels, I converted the predicted class into a binary format (1 for “&gt;50K”, 0 otherwise) and exported the results as a .csv file.\n\nprediction_vector &lt;- predict(boosted_fit, new_data = census_test, type = \"class\") |&gt;\n  mutate(income = ifelse(.pred_class %in% c(\"&gt;50K\", \"&gt;50K.\"), 1, 0)) |&gt;\n  select(income)\n\nwrite.csv(prediction_vector, \"my_predictions.csv\", row.names = FALSE)",
-    "crumbs": [
-      "Projects",
-      "Census Data Hackathon"
-    ]
-  },
-  {
-    "objectID": "projects/census-data-hackathon/ar_hackathon.html#update",
-    "href": "projects/census-data-hackathon/ar_hackathon.html#update",
-    "title": "Predicting US Census Data with XGBoost",
-    "section": "5.1 Update",
-    "text": "5.1 Update\nI came third (out of 15 people)!!! My accuracy was 86.6%. I will be returning to this in the near future because I am curious about pairing my stepwise BIC model WITH XGBoost and seeing what those results would be.",
-    "crumbs": [
-      "Projects",
-      "Census Data Hackathon"
-    ]
-  },
-  {
-    "objectID": "projects/census-data-hackathon/ar_hackathon.html#limitations",
-    "href": "projects/census-data-hackathon/ar_hackathon.html#limitations",
-    "title": "Predicting US Census Data with XGBoost",
-    "section": "5.2 Limitations",
-    "text": "5.2 Limitations\nI don’t really have anything to report on my final results. One reason is that while I had the test data, it actually does not have the income column. I will likely make an update here (once my teacher has evaluated my work) with my accuracy, and if possible, a confusion matrix and other metrics.\nGradient boosted trees are computationally expensive, meaning every mistake and consequent re-run cost me over 2 additional hours of runtime. That held me back from experimenting more, to be honest. I only repeated my cross-validation once as I suspect it would take 20+ hours if I did it 10 times (running my current setup with 1 fold took &gt; 2 hours).",
-    "crumbs": [
-      "Projects",
-      "Census Data Hackathon"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Analyzing Spending Habits With Logistic Regression\n\n\nExploring indicators of spending habit behaviors using logistic regression.\n\n\n\n\n\n\n\n\n\n\n\n\nPredicting US Census Data with XGBoost\n\n\nUsing US Census data to predict whether or not someone has an annual income of more than $50,000.\n\n\n\n\n\nNo matching items\n Back to top",
-    "crumbs": [
-      "Projects"
-    ]
   },
   {
     "objectID": "projects/spending-behavior-model/spending-habits-analysis.html",
@@ -286,6 +150,57 @@
     ]
   },
   {
+    "objectID": "garden/garden-home.html",
+    "href": "garden/garden-home.html",
+    "title": "Ash’s Digital Garden",
+    "section": "",
+    "text": "Collection of thoughts and long-form written pieces. Usually about programming, artificial intelligence, and/or philosophy.\nTo be honest, this collection exists so I can become more comfortable with expressing my opinions. My hope is to make my philosophy senior thesis not feel daunting when the time comes :).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMaybe I, Too, Am a Member of the Crustacean Cult\n\n\nReflecting on why I prefer R over Python for data-related tasks. TLDR: structure &gt; abstraction.\n\n\n\nJun 4, 2025\n\n\n\n\n\n\nNo matching items\n Back to top",
+    "crumbs": [
+      "Digital Garden"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to my portfolio!",
+    "section": "",
+    "text": "♡ ash r. | Click here to view my projects! ♡\nHi, I’m Ash. I’m a junior double majoring in Philosophy and Mathematics-Computer Science with a specialization in Data Science. I’m especially interested in the philosophy of mind and the ways data science and philosophy intersect, particularly when it comes to understanding human behavior and decision-making. Data science lets me explore real-world problems, while my background in philosophy helps me think critically about the implications of what I find.\nWhen I’m not working on school stuff, you can find me playing indie games like Stardew Valley or Balatro. I’m a fan of all sorts of music, from jazz to hyperpop to rock. I also love cozy things; hot chocolate, blankets, and autumn are some of my favorite comforts. If I’m not playing video games or listening to music, I’ll probably be baking cupcakes (they’re easier to share) for my friends or reading articles from The New York Times (I have a soft spot for Modern Love especially), The Atlantic, or WIRED.\n\nYou can find my GitHub here.\n\n\n\n Back to top",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "assignments/job1/resume1.html",
+    "href": "assignments/job1/resume1.html",
+    "title": "Resume",
+    "section": "",
+    "text": "Back to top"
+  },
+  {
+    "objectID": "assignments/job1/jobapp1.html",
+    "href": "assignments/job1/jobapp1.html",
+    "title": "Job Application 1",
+    "section": "",
+    "text": "Included are my resume, cover letter and project! Please note that the project is currently undergoing an overhaul and therefore the contents of the project are outdated and are not accurately reflected by the resume. The updated version will be posted soon.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "assignments/job1/coverletter1.html",
+    "href": "assignments/job1/coverletter1.html",
+    "title": "Cover Letter",
+    "section": "",
+    "text": "Back to top"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Analyzing Spending Habits With Logistic Regression\n\n\nExploring indicators of spending habit behaviors using logistic regression.\n\n\n\n\n\n\n\n\n\n\n\n\nPredicting US Census Data with XGBoost\n\n\nUsing US Census data to predict whether or not someone has an annual income of more than $50,000.\n\n\n\n\n\nNo matching items\n Back to top",
+    "crumbs": [
+      "Projects"
+    ]
+  },
+  {
     "objectID": "garden/crab-cult/crab-cult.html",
     "href": "garden/crab-cult/crab-cult.html",
     "title": "Maybe I, Too, Am a Member of the Crustacean Cult",
@@ -341,17 +256,102 @@
     ]
   },
   {
-    "objectID": "assignments/job1/resume1.html",
-    "href": "assignments/job1/resume1.html",
-    "title": "Resume",
+    "objectID": "projects/census-data-hackathon/ar_hackathon.html",
+    "href": "projects/census-data-hackathon/ar_hackathon.html",
+    "title": "Predicting US Census Data with XGBoost",
     "section": "",
-    "text": "Back to top"
+    "text": "This project is my final assignment for MAT-427: Statistical Machine Learning, where we were tasked with using data from the U.S. Census Bureau to predict whether or not someone earns more than $50,000 annually. This project is a hackathon, meaning I had to make trade-offs between accuracy and interpretability. Since accuracy is arguably most important in a hackathon, it was prioritized over interpretability (most evident in the “Final Thoughts” section).\n\n\nSince accuracy was my highest priority, I used gradient boosted trees (XGBoost in particular) for my model. XGBoost is widely used in competitive machine learning for its ability to efficiently model complex nonlinear relationships while handling missing data and feature interactions with minimal preprocessing.",
+    "crumbs": [
+      "Projects",
+      "Census Data Hackathon"
+    ]
   },
   {
-    "objectID": "assignments/job1/coverletter1.html",
-    "href": "assignments/job1/coverletter1.html",
-    "title": "Cover Letter",
+    "objectID": "projects/census-data-hackathon/ar_hackathon.html#rationale",
+    "href": "projects/census-data-hackathon/ar_hackathon.html#rationale",
+    "title": "Predicting US Census Data with XGBoost",
     "section": "",
-    "text": "Back to top"
+    "text": "Since accuracy was my highest priority, I used gradient boosted trees (XGBoost in particular) for my model. XGBoost is widely used in competitive machine learning for its ability to efficiently model complex nonlinear relationships while handling missing data and feature interactions with minimal preprocessing.",
+    "crumbs": [
+      "Projects",
+      "Census Data Hackathon"
+    ]
+  },
+  {
+    "objectID": "projects/census-data-hackathon/ar_hackathon.html#preparing-data-for-visualization",
+    "href": "projects/census-data-hackathon/ar_hackathon.html#preparing-data-for-visualization",
+    "title": "Predicting US Census Data with XGBoost",
+    "section": "3.1 Preparing Data for Visualization",
+    "text": "3.1 Preparing Data for Visualization\nWe will use recipes and workflows to preprocess the data before modeling. Consequently, to not conflict with that, I made a copy of the training data for visualization purposes.\n\n\nDuplicating Data Frames (expand to view code)\ncensus_eda &lt;- census_train\n\n\nI made mild changes to our graphing data: I removed trailing whitespace, replaced ? values with Unknown, turned categorical variables into factors, and removed the inconsistent period at the end of some of the income values.\n\n\nModifying EDA Data (expand to view code)\ncensus_eda &lt;- census_eda |&gt;\n  mutate(across(where(is.character), ~ str_trim(.))) |&gt;\n  mutate(across(where(is.character), ~ ifelse(. == \"?\", \"Unknown\", .))) |&gt;\n  mutate(across(where(is.character), as.factor)) |&gt;\n  mutate(income = as.factor(str_trim(str_replace_all(as.character(income), \"\\\\.\", \"\"))))",
+    "crumbs": [
+      "Projects",
+      "Census Data Hackathon"
+    ]
+  },
+  {
+    "objectID": "projects/census-data-hackathon/ar_hackathon.html#finding-the-best-predictors",
+    "href": "projects/census-data-hackathon/ar_hackathon.html#finding-the-best-predictors",
+    "title": "Predicting US Census Data with XGBoost",
+    "section": "3.2 Finding the “Best” Predictors",
+    "text": "3.2 Finding the “Best” Predictors\nI used feature selection to narrow our list of predictors to the most “meaningful” ones. To achieve this, I used stepwise selection (both forward and backward) and the BIC (Bayesian Information Criterion) to take a model with all predictors and return one with only the most impactful predictors.\n\n\nCreating General Model & Stepwise Selection w/ BIC (expand to view code)\neda_model &lt;- glm(income ~ ., data = census_eda, family = binomial)\nn &lt;- nrow(census_eda) # get number of observations for BIC calculation\nmodel_BIC &lt;- stepAIC(eda_model, direction = \"both\", k = log(n), trace = FALSE)\n\n\nBelow, we can see the most impactful predictors:\n\n\nDisplaying Most Impactful Predictors (expand to view code)\nformula(model_BIC)\n\n\nincome ~ age + workclass + fnlwgt + education + marital.status + \n    occupation + relationship + sex + capital.gain + capital.loss + \n    hours.per.week",
+    "crumbs": [
+      "Projects",
+      "Census Data Hackathon"
+    ]
+  },
+  {
+    "objectID": "projects/census-data-hackathon/ar_hackathon.html#univariate-graph",
+    "href": "projects/census-data-hackathon/ar_hackathon.html#univariate-graph",
+    "title": "Predicting US Census Data with XGBoost",
+    "section": "3.3 Univariate Graph",
+    "text": "3.3 Univariate Graph\nLooking at the distribution of our response variable, we can see that most observations have an annual income of less than $50,000.\n\n\nIncome Bar Chart (expand to view code)\nincome_univariate &lt;- ggplot(census_eda, aes(x = income)) +\n        geom_bar(fill = \"#412d5e\", alpha = 0.9) +\n        labs(\n          title = \"Distribution of Income\",\n          x = \"Income\",\n          y = \"Number of Observations\") +\n        theme_minimal() +\n        theme(\n          plot.caption = element_text(hjust = 0, size = 10),\n          axis.text.x = element_text(angle = 45, hjust = 1)\n          )\n\nincome_univariate",
+    "crumbs": [
+      "Projects",
+      "Census Data Hackathon"
+    ]
+  },
+  {
+    "objectID": "projects/census-data-hackathon/ar_hackathon.html#bivariate-graphs",
+    "href": "projects/census-data-hackathon/ar_hackathon.html#bivariate-graphs",
+    "title": "Predicting US Census Data with XGBoost",
+    "section": "3.4 Bivariate Graphs",
+    "text": "3.4 Bivariate Graphs\nSix graphs might be a bit too much, but I found the following interesting: the income plotted against type of work, occupation, marital status, sex, age, and hours worked weekly. My eye-opening takeaways were that self-employed individuals with a registered incorporated business and people married to civillian spouses were more likely to make more than $50,000.\n\nWork Type & Occupation Proportional Bar Charts (expand to view code)\nworkclass_bivariate &lt;- ggplot(census_eda, aes(x = workclass, \n                                              fill = income)) + \n  geom_bar(position = \"fill\") + \n  labs(\n    title = \"Relationship Between Income & Work Type\",\n    x = \"Work Type\",\n    y = \"Proportion of Observations\") +\n  theme_minimal() +\n  scale_fill_wa_d(\"puget\") +\n  theme(\n    axis.title.x = element_text(size = 12),\n    axis.title.y = element_text(size = 12),\n    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),\n    axis.text.y = element_text(size = 12),\n    plot.title = element_text(size = 16),\n    legend.title = element_text(size = 14),\n    legend.text = element_text(size = 14))\n\noccupation_bivariate &lt;- ggplot(census_eda, aes(x = occupation, \n                                               fill = income)) + \n  geom_bar(position = \"fill\") + \n  labs(\n    title = \"Relationship Between Income & Occupation\",\n    x = \"Occupation\",\n    y = \"Proportion of Observations\") +\n  theme_minimal() +\n  scale_fill_wa_d(\"puget\") +\n  theme(\n    axis.title.x = element_text(size = 12),\n    axis.title.y = element_text(size = 12),\n    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),\n    axis.text.y = element_text(size = 12),\n    plot.title = element_text(size = 16),\n    legend.title = element_text(size = 14),\n    legend.text = element_text(size = 14))\n\nworkclass_bivariate\noccupation_bivariate\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMarital Status & Sex Proportional Bar Charts (expand to view code)\nmarriage_bivariate &lt;- ggplot(census_eda, aes(x = marital.status, \n                                              fill = income)) + \n  geom_bar(position = \"fill\") + \n  labs(\n    title = \"Relationship Between Income & Marital Status\",\n    x = \"Marital Status\",\n    y = \"Proportion of Observations\") +\n  theme_minimal() +\n  scale_fill_wa_d(\"puget\") +\n  theme(\n    axis.title.x = element_text(size = 12),\n    axis.title.y = element_text(size = 12),\n    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),\n    axis.text.y = element_text(size = 12),\n    plot.title = element_text(size = 16),\n    legend.title = element_text(size = 14),\n    legend.text = element_text(size = 14))\n\nsex_bivariate &lt;- ggplot(census_eda, aes(x = sex, \n                                               fill = income)) + \n  geom_bar(position = \"fill\") + \n  labs(\n    title = \"Relationship Between Income & Sex\",\n    x = \"Sex\",\n    y = \"Proportion of Observations\") +\n  theme_minimal() +\n  scale_fill_wa_d(\"puget\") +\n  theme(\n    axis.title.x = element_text(size = 12),\n    axis.title.y = element_text(size = 12),\n    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),\n    axis.text.y = element_text(size = 12),\n    plot.title = element_text(size = 16),\n    legend.title = element_text(size = 14),\n    legend.text = element_text(size = 14))\n\nmarriage_bivariate\nsex_bivariate\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAge & Hours Worked Weekly Proportional Box Plots (expand to view code)\nage_bivariate &lt;- ggplot(census_eda, aes(x = income, y = age, fill = income)) +\n  geom_boxplot() +\n  labs(title = \"Relationship Between Income & Age\",\n       x = \"Income\",\n       y = \"Age\") +\n  theme_minimal() +\n  scale_fill_wa_d(\"puget\") +\n  theme(\n    axis.title.x = element_text(size = 12),\n    axis.title.y = element_text(size = 12),\n    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),\n    axis.text.y = element_text(size = 12),\n    plot.title = element_text(size = 14),\n    legend.title = element_text(size = 14),\n    legend.text = element_text(size = 14))\n\nhours_bivariate &lt;- ggplot(census_eda, aes(x = income, y = hours.per.week, fill = income)) +\n  geom_boxplot() +\n  labs(title = \"Relationship Between Income & Hours worked Weekly\",\n       x = \"Income\",\n       y = \"Hours Worked Weekly\") +\n  theme_minimal() +\n  scale_fill_wa_d(\"puget\") +\n  theme(\n    axis.title.x = element_text(size = 12),\n    axis.title.y = element_text(size = 12),\n    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),\n    axis.text.y = element_text(size = 12),\n    plot.title = element_text(size = 14),\n    legend.title = element_text(size = 14),\n    legend.text = element_text(size = 14))\n\nage_bivariate\nhours_bivariate",
+    "crumbs": [
+      "Projects",
+      "Census Data Hackathon"
+    ]
+  },
+  {
+    "objectID": "projects/census-data-hackathon/ar_hackathon.html#preparing-data-for-modeling",
+    "href": "projects/census-data-hackathon/ar_hackathon.html#preparing-data-for-modeling",
+    "title": "Predicting US Census Data with XGBoost",
+    "section": "4.1 Preparing Data for Modeling",
+    "text": "4.1 Preparing Data for Modeling\nI created an XGBoost model with the goal of tuning its hyperparameters for better performance.\n\nboosted_model &lt;- boost_tree(trees = tune(), \n                            learn_rate = tune(), \n                            tree_depth = tune(), \n                            min_n = tune()) |&gt;\n  set_engine(\"xgboost\") |&gt;\n  set_mode(\"classification\")\n\nI treated ? values as NA so they could be imputed. I also converted categorical variables into factors, ensured numeric predictors were integers, used the median to impute numeric values, and the mode for categorical ones. Finally, I applied dummy (one-hot) encoding so categorical variables could be modeled numerically.\n\nboosted_recipe &lt;- recipe(income ~ ., data = census_train) |&gt;\n  step_mutate(across(where(is.character) | where(is.factor), ~ as.factor(stringr::str_trim(ifelse(as.character(.x) == \"?\", NA, as.character(.x)))))) |&gt;\n  step_indicate_na(all_predictors()) |&gt;\n  step_zv(all_predictors()) |&gt;\n  step_integer(all_numeric_predictors()) |&gt;\n  step_impute_median(all_numeric_predictors()) |&gt;\n  step_impute_mode(all_nominal_predictors()) |&gt;\n  step_dummy(all_nominal_predictors(), one_hot = TRUE)\n\nI made a workflow to put our recipe and model together so they could easily be used with the training (and later the test) set.\n\nboosted_workflow &lt;- workflow() |&gt;\n  add_model(boosted_model) |&gt;\n  add_recipe(boosted_recipe)\n\nI defined a grid of hyperparameter values for my XGBoost model using grid_space_filling(), which selects a diverse but efficient sample of combinations. I then applied 5-fold cross-validation (with one repeat) to evaluate each combination, stratifying by income to preserve class distribution across folds.\n\nboosted_grid &lt;- grid_space_filling(trees(range = c(20, 200)),\n                                   tree_depth(range = c(1, 15)),\n                                   learn_rate(range = c(-10,-1)),\n                                   min_n(range = c(2, 40)),\n                                   size = 50)\n\ncensus_folds = vfold_cv(census_train, v = 5, repeats = 1, strata = income)\n\nI used parallel processing to speed up tuning across my grid of hyperparameters. Using tune_grid(), I evaluated each model combination defined earlier using 5-fold cross-validation. The process was parallelized across 9 cores to reduce runtime, and the cluster was stopped afterward to free system resources.\n\ncl &lt;- makePSOCKcluster(9)\nregisterDoParallel(cl)\n\ntuning_results &lt;- tune_grid(\n  boosted_workflow,\n  resamples = census_folds,\n  grid = boosted_grid\n)\n\nstopCluster(cl)\n\nAfter tuning, I selected the hyperparameter combination that gave the highest accuracy and used it to train the final model.\n\n\nFitting Model w/ Tuned Parameters (expand to view code)\nboosted_fit &lt;- boosted_workflow |&gt;\n  finalize_workflow(select_best(tuning_results, metric = \"accuracy\")) |&gt;\n  fit(census_train)\n\n\nFinally, I used the tuned model to generate predictions on the test set. Since the test set didn’t include income labels, I converted the predicted class into a binary format (1 for “&gt;50K”, 0 otherwise) and exported the results as a .csv file.\n\nprediction_vector &lt;- predict(boosted_fit, new_data = census_test, type = \"class\") |&gt;\n  mutate(income = ifelse(.pred_class %in% c(\"&gt;50K\", \"&gt;50K.\"), 1, 0)) |&gt;\n  select(income)\n\nwrite.csv(prediction_vector, \"my_predictions.csv\", row.names = FALSE)",
+    "crumbs": [
+      "Projects",
+      "Census Data Hackathon"
+    ]
+  },
+  {
+    "objectID": "projects/census-data-hackathon/ar_hackathon.html#update",
+    "href": "projects/census-data-hackathon/ar_hackathon.html#update",
+    "title": "Predicting US Census Data with XGBoost",
+    "section": "5.1 Update",
+    "text": "5.1 Update\nI came third (out of 15 people)!!! My accuracy was 86.6%. I will be returning to this in the near future because I am curious about pairing my stepwise BIC model WITH XGBoost and seeing what those results would be.",
+    "crumbs": [
+      "Projects",
+      "Census Data Hackathon"
+    ]
+  },
+  {
+    "objectID": "projects/census-data-hackathon/ar_hackathon.html#limitations",
+    "href": "projects/census-data-hackathon/ar_hackathon.html#limitations",
+    "title": "Predicting US Census Data with XGBoost",
+    "section": "5.2 Limitations",
+    "text": "5.2 Limitations\nI don’t really have anything to report on my final results. One reason is that while I had the test data, it actually does not have the income column. I will likely make an update here (once my teacher has evaluated my work) with my accuracy, and if possible, a confusion matrix and other metrics.\nGradient boosted trees are computationally expensive, meaning every mistake and consequent re-run cost me over 2 additional hours of runtime. That held me back from experimenting more, to be honest. I only repeated my cross-validation once as I suspect it would take 20+ hours if I did it 10 times (running my current setup with 1 fold took &gt; 2 hours).",
+    "crumbs": [
+      "Projects",
+      "Census Data Hackathon"
+    ]
   }
 ]
