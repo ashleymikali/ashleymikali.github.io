@@ -33,6 +33,18 @@ jobs:
         with:
           repository: ashleymikali/census-data-hackathon
           path: projects/census-data-hackathon
+
+      - name: Checkout Annals of Eugenics Graphs Repository
+        uses: actions/checkout@v3
+        with:
+          repository: ashleymikali/eugenics-journal-graphs
+          path: projects/eugenics-journal-graphs
+
+      - name: Checkout Onion Article Classification Repository
+        uses: actions/checkout@v3
+        with:
+          repository: ashleymikali/onion-classification
+          path: projects/onion-classification
           
       - name: List Files in Portfolio Repository
         run: ls -R
