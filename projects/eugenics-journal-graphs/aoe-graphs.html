@@ -68,7 +68,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../images/bio-icon.png" rel="icon" type="image/png">
+<link href="../../images/bow-favicon.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -309,7 +309,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-wrangling" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Data Wrangling</h1>
-<div id="fe2947bb" class="cell" data-execution_count="1">
+<div id="fe94e975" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Packages Used (expand to view code)</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -317,13 +317,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> wordcloud <span class="im">import</span> WordCloud</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="9f2f203c" class="cell" data-execution_count="2">
+<div id="2135df9f" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Importing Dataset (expand to view code)</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/annals-of-eugenics-v1.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="4d7c3050" class="cell" data-execution_count="3">
+<div id="88f8b337" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Preview (expand to view code)</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tabulate <span class="im">import</span> tabulate</span>
@@ -345,7 +345,7 @@ Margaret Moul                   | nan            |          nan | *Considering p
 </section>
 <section id="data-visualization" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Data Visualization</h1>
-<div id="30067b84" class="cell" data-execution_count="4">
+<div id="26058ae7" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Number of Papers Per Year Graph (expand to view code)</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>counts <span class="op">=</span> df[<span class="st">'Year'</span>].value_counts().sort_index()</span>
@@ -366,7 +366,7 @@ Margaret Moul                   | nan            |          nan | *Considering p
 </div>
 </div>
 </div>
-<div id="534e64e1" class="cell" data-execution_count="5">
+<div id="3911db8b" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Word Cloud (expand to view code)</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">" "</span>.join(df[<span class="st">'Title'</span>].dropna())</span>
@@ -391,7 +391,7 @@ Margaret Moul                   | nan            |          nan | *Considering p
 </div>
 </div>
 </div>
-<div id="d9698d0d" class="cell" data-execution_count="6">
+<div id="01abc876" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Most Frequent Authors Graph (expand to view code)</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>authors <span class="op">=</span> df[<span class="st">'Author(s)'</span>].dropna().<span class="bu">str</span>.split(<span class="st">';'</span>, expand<span class="op">=</span><span class="va">True</span>).stack()</span>
