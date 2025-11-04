@@ -7,7 +7,7 @@ project:
 website:
   site-url: https://ashleymikali.com
   title: "ash r. ♡"
-  favicon: images/bio-icon.png
+  favicon: images/bow-favicon.png
   
   sidebar:
     style: "docked"
