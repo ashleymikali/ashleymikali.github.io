@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,14 +35,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cbb775691ae88302dbabc9db953b899b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e321237d69f6e9dc366662706f0f13d9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -82,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-image','listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -114,7 +115,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -155,9 +156,8 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">ash r. ♡</a> 
-    </div>
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -193,6 +193,18 @@ window.Quarto = {
  <span class="menu-text">Census Data Hackathon</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./projects/eugenics-journal-graphs/aoe-graphs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Annals of Eugenics Graphs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./placeholder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Onion Article Classification</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -219,7 +231,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-unnumbered"><div class="category" data-category="RXhwbG9yYXRvcnklMjBEYXRhJTIwQW5hbHlzaXM=">Exploratory Data Analysis</div><div class="category" data-category="R3JhZGllbnQlMjBCb29zdGVkJTIwVHJlZXM=">Gradient Boosted Trees</div><div class="category" data-category="SGFja2F0aG9u">Hackathon</div><div class="category" data-category="TG9naXN0aWMlMjBSZWdyZXNzaW9u">Logistic Regression</div><div class="category" data-category="Ug==">R</div><div class="category" data-category="U2hpbnk=">Shiny</div><div class="category" data-category="WEdCb29zdA==">XGBoost</div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-unnumbered"><div class="category" data-category="RGF0YSUyMFZpc3VhbGl6YXRpb24=">Data Visualization</div><div class="category" data-category="RXhwbG9yYXRvcnklMjBEYXRhJTIwQW5hbHlzaXM=">Exploratory Data Analysis</div><div class="category" data-category="R3JhZGllbnQlMjBCb29zdGVkJTIwVHJlZXM=">Gradient Boosted Trees</div><div class="category" data-category="SGFja2F0aG9u">Hackathon</div><div class="category" data-category="TG9naXN0aWMlMjBSZWdyZXNzaW9u">Logistic Regression</div><div class="category" data-category="TWF0cGxvdGxpYg==">Matplotlib</div><div class="category" data-category="UHl0aG9u">Python</div><div class="category" data-category="Ug==">R</div><div class="category" data-category="U2hpbnk=">Shiny</div><div class="category" data-category="WEdCb29zdA==">XGBoost</div></div></div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
@@ -248,7 +260,21 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="UiUyQ0V4cGxvcmF0b3J5JTIwRGF0YSUyMEFuYWx5c2lzJTJDTG9naXN0aWMlMjBSZWdyZXNzaW9uJTJDU2hpbnk=" data-listing-file-modified-sort="1751572538551" data-listing-reading-time-sort="24" data-listing-word-count-sort="4692">
+<div class="g-col-1" data-index="0" data-categories="UHl0aG9uJTJDRXhwbG9yYXRvcnklMjBEYXRhJTIwQW5hbHlzaXMlMkNEYXRhJTIwVmlzdWFsaXphdGlvbiUyQ01hdHBsb3RsaWI=" data-listing-date-sort="1762128000000" data-listing-file-modified-sort="1762216572650" data-listing-date-modified-sort="1762128000000" data-listing-reading-time-sort="3" data-listing-word-count-sort="409">
+<a href="./projects/eugenics-journal-graphs/aoe-graphs.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="projects/eugenics-journal-graphs/aoe-graphs_files/figure-html/cell-5-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+An Investigation of the Annals of Eugenics (1925-1953)
+</h5>
+<div class="card-text listing-description delink">
+<p>Exploring trends and patterns in the Annals of Eugenics.</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="UiUyQ0V4cGxvcmF0b3J5JTIwRGF0YSUyMEFuYWx5c2lzJTJDTG9naXN0aWMlMjBSZWdyZXNzaW9uJTJDU2hpbnk=" data-listing-file-modified-sort="1762216572665" data-listing-reading-time-sort="24" data-listing-word-count-sort="4692">
 <a href="./projects/spending-behavior-model/spending-habits-analysis.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -264,7 +290,7 @@ Analyzing Spending Habits With Logistic Regression
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="UiUyQ0V4cGxvcmF0b3J5JTIwRGF0YSUyMEFuYWx5c2lzJTJDSGFja2F0aG9uJTJDWEdCb29zdCUyQ0dyYWRpZW50JTIwQm9vc3RlZCUyMFRyZWVz" data-listing-file-modified-sort="1751572538517" data-listing-reading-time-sort="13" data-listing-word-count-sort="2507">
+<div class="g-col-1" data-index="2" data-categories="UiUyQ0V4cGxvcmF0b3J5JTIwRGF0YSUyMEFuYWx5c2lzJTJDSGFja2F0aG9uJTJDWEdCb29zdCUyQ0dyYWRpZW50JTIwQm9vc3RlZCUyMFRyZWVz" data-listing-file-modified-sort="1762216572627" data-listing-reading-time-sort="13" data-listing-word-count-sort="2507">
 <a href="./projects/census-data-hackathon/ar_hackathon.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -334,13 +360,14 @@ Predicting US Census Data with XGBoost
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

@@ -8,6 +8,7 @@
   {
     "listing": "/about.html",
     "items": [
+      "/projects/eugenics-journal-graphs/aoe-graphs.html",
       "/projects/spending-behavior-model/spending-habits-analysis.html",
       "/projects/census-data-hackathon/ar_hackathon.html"
     ]
