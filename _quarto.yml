@@ -23,6 +23,8 @@ website:
             href: projects/spending-behavior-model/spending-habits-analysis.qmd
           - text: "Census Data Hackathon"
             href: projects/census-data-hackathon/ar_hackathon.qmd
+          - text: "Annals of Eugenics Graphs"
+          - text: "Onion Article Classification"
           #- text: "Diabetes Exploration"
             #href: placeholder.qmd
           #- text: "K-Pop Release Radar"
