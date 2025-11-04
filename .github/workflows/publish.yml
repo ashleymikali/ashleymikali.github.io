@@ -24,6 +24,19 @@ jobs:
       
       - name: Gather R Packages
         uses: r-lib/actions/setup-r-dependencies@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: |
+          pip install jupyter
+          pip install pandas
+          pip install matplotlib
+          pip install wordcloud
+          pip install tabulate
       
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
