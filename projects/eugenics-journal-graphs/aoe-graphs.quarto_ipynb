@@ -1,0 +1,206 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"An Investigation of the Annals of Eugenics (1925-1953)\"\n",
+        "author: \"Ashley Russell\"\n",
+        "description: \"Exploring trends and patterns in the Annals of Eugenics.\"\n",
+        "date: 11/3/2025\n",
+        "date-modified: 11/3/2025\n",
+        "date-format: long\n",
+        "#image: spending-habits-analysis_files/figure-html/predicted-prob-plot-1.png\n",
+        "categories:\n",
+        "  - Python \n",
+        "  - Exploratory Data Analysis\n",
+        "  - Data Visualization\n",
+        "  - Matplotlib\n",
+        "format:\n",
+        "  html:\n",
+        "    code-overflow: wrap\n",
+        "    toc: true\n",
+        "    number-sections: true\n",
+        "#theme: flatly\n",
+        "editor: visual\n",
+        "page-layout: full\n",
+        "---\n",
+        "\n",
+        "\n",
+        "# Immediate To-Do:\n",
+        "\n",
+        "-   [x] Do a test run to make sure plans are feasible.\n",
+        "\n",
+        "-   [ ] Finish the spreadsheet!\n",
+        "\n",
+        "-   [ ] Normalize author names (e.g. figure out how to handle \"Mary N. Karn\" and \"M. N. Karn\").\n",
+        "\n",
+        "-   [ ] Remove as many filler words as possible before creating word cloud.\n",
+        "\n",
+        "-   [ ] Note any particularly interesting titles.\n",
+        "\n",
+        "-   [ ] Write thoughts, analysis, takeaways, reflection.\n",
+        "\n",
+        "# Introduction\n",
+        "\n",
+        "These are graphs exploring the Annals of Eugenics and its articles, namely:\n",
+        "\n",
+        "-   How many articles were published each year;\n",
+        "\n",
+        "-   Most frequent key words in article titles;\n",
+        "\n",
+        "-   Most published authors in the journal.\n",
+        "\n",
+        "## Rationale\n",
+        "\n",
+        "This is part of a larger project about the history of Eugenics at my college (The College of Idaho), in my state (Idaho), and in academia as a whole. Exploring the *Annals of Eugenics* was a way to see the type of work that was being published during its tenure (at least before it was renamed to the *Annals of Human Genetics* in 1954*).*\n",
+        "\n",
+        "## About the Data\n",
+        "\n",
+        "This dataset is self made! I made a spreadsheet keeping track of the titles and authors of articles across years, volumes, and issues.\n",
+        "\n",
+        "# Data Wrangling\n"
+      ],
+      "id": "5016aa23"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| code-fold: true\n",
+        "#| code-summary: \"Packages Used (expand to view code)\"\n",
+        "\n",
+        "import pandas as pd\n",
+        "import matplotlib.pyplot as plt\n",
+        "from wordcloud import WordCloud"
+      ],
+      "id": "2048eeca",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| code-fold: true\n",
+        "#| code-summary: \"Importing Dataset (expand to view code)\"\n",
+        "\n",
+        "df = pd.read_csv(\"data/annals-of-eugenics-v1.csv\")"
+      ],
+      "id": "84469425",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| code-fold: show\n",
+        "#| code-summary: \"Preview (expand to view code)\"\n",
+        "\n",
+        "from tabulate import tabulate\n",
+        "\n",
+        "print(tabulate(df.head(), headers='keys', tablefmt='github'))"
+      ],
+      "id": "543555e2",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Data Visualization\n"
+      ],
+      "id": "1810830d"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| code-fold: true\n",
+        "#| code-summary: \"Number of Papers Per Year Graph (expand to view code)\"\n",
+        "\n",
+        "counts = df['Year'].value_counts().sort_index()\n",
+        "\n",
+        "plt.figure(figsize=(10,5))\n",
+        "plt.plot(counts.index, counts.values, marker='o')\n",
+        "plt.title(\"Number of Publications per Year in Annals of Eugenics\")\n",
+        "plt.xlabel(\"Year\")\n",
+        "plt.ylabel(\"Number of Publications\")\n",
+        "plt.grid(True)\n",
+        "plt.show()"
+      ],
+      "id": "9c2170e9",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| code-fold: true\n",
+        "#| code-summary: \"Word Cloud (expand to view code)\"\n",
+        "\n",
+        "text = \" \".join(df['Title'].dropna())\n",
+        "\n",
+        "\n",
+        "wc = WordCloud(width=1000, height=500,\n",
+        "               background_color='white',\n",
+        "               stopwords={'the', 'of', 'and', 'on', 'in'}).generate(text)\n",
+        "\n",
+        "\n",
+        "plt.figure(figsize=(12,6))\n",
+        "plt.imshow(wc, interpolation='bilinear')\n",
+        "plt.axis('off')\n",
+        "plt.title(\"Most Frequent Words in Article Titles\")\n",
+        "plt.show()"
+      ],
+      "id": "247916a5",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| code-fold: true\n",
+        "#| code-summary: \"Most Frequent Authors Graph (expand to view code)\"\n",
+        "\n",
+        "authors = df['Author(s)'].dropna().str.split(';', expand=True).stack()\n",
+        "authors.value_counts().head(10).plot(kind='barh')\n",
+        "plt.title(\"Most Frequent Authors\")\n",
+        "plt.show()"
+      ],
+      "id": "52f4981d",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Final Thoughts\n",
+        "\n",
+        "## Limitations\n",
+        "\n",
+        "Making the spreadsheet took a minute, but that's what happens when you make your own dataset. It probably would have been easier to scrape the data, but that felt like it would've taken more time to set up and figure out, and inserting all of this information in a spreadsheet was a decent way to pass time.\n",
+        "\n",
+        "## Reflection\n",
+        "\n",
+        "¯\\\\\\_(ツ)\\_/¯ TBD"
+      ],
+      "id": "9c02be3f"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

@@ -24,7 +24,9 @@ website:
           - text: "Census Data Hackathon"
             href: projects/census-data-hackathon/ar_hackathon.qmd
           - text: "Annals of Eugenics Graphs"
+            href: projects/eugenics-journal-graphs/aoe-graphs.qmd
           - text: "Onion Article Classification"
+            href: placeholder.qmd
           #- text: "Diabetes Exploration"
             #href: placeholder.qmd
           #- text: "K-Pop Release Radar"
