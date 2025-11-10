@@ -25,17 +25,17 @@ website:
             href: projects/census-data-hackathon/ar_hackathon.qmd
           - text: "Annals of Eugenics Graphs"
             href: projects/eugenics-journal-graphs/aoe-graphs.qmd
-          - text: "Onion Article Classification"
-            href: placeholder.qmd
+          #- text: "Onion Article Classification"
+            #href: placeholder.qmd
           #- text: "Diabetes Exploration"
             #href: placeholder.qmd
           #- text: "K-Pop Release Radar"
             #href: placeholder.qmd
-      - section: "Digital Garden"
-        href: garden/garden-home.qmd
-        contents:
-          - text: "Why R > Python IMO"
-            href: garden/crab-cult/crab-cult.qmd
+      #- section: "Digital Garden"
+        #href: garden/garden-home.qmd
+        #contents:
+          #- text: "Why R > Python IMO"
+            #href: garden/crab-cult/crab-cult.qmd
           #- text: "(AI) Hallucination is Humanizing"
           #- text: "In Memoriam: Pre-AI Literacy"
           #- text: "Brain Simulate Machine, or Machine Simulate Brain?"
