@@ -58,31 +58,130 @@
   {
     "objectID": "projects/eugenics-journal-graphs/aoe-graphs.html",
     "href": "projects/eugenics-journal-graphs/aoe-graphs.html",
-    "title": "An Investigation of the Annals of Eugenics (1925-1953)",
+    "title": "Historical Analysis of the Annals of Eugenics (1925-1954)",
     "section": "",
-    "text": "Do a test run to make sure plans are feasible.\nFinish the spreadsheet!\nClean the spreadsheet\nNormalize author names (e.g. figure out how to handle “Mary N. Karn” and “M. N. Karn”).\nRemove as many filler words as possible before creating word cloud.\nNote any particularly interesting titles.\nWrite thoughts, analysis, takeaways, reflection.",
+    "text": "This project examines the Annals of Eugenics, a scientific journal published from 1925 to 1954 before being renamed the Annals of Human Genetics. Through quantitative analysis of publication metadata, this study explores patterns in authorship, research topics, and publication trends during a controversial period in the history of genetics and statistics.\n\n\nThis analysis is part of a larger investigation into the history of eugenics in academia, particularly at The College of Idaho and within the state of Idaho. Understanding what was published in the Annals of Eugenics provides insight into the type of research that was considered legitimate science during this era and how the field evolved over time.\n\n\n\n\nHow did publication volume change over the journal’s 29-year run?\nWhich researchers were the most prolific contributors to the journal?\nWhat topics dominated the research published in the Annals of Eugenics?\n\n\n\n\nData Source: The Annals of Eugenics online archive\nCollection Method: Web scraping using Python (BeautifulSoup, requests)\nTime Period: 1925-1954 (Volumes 1-18)\nData Points: Article titles, authors, publication dates, volume/issue numbers\nThe dataset was constructed by scraping article metadata directly from the journal’s online archive, then cleaned and normalized for analysis.",
     "crumbs": [
       "Projects",
       "Annals of Eugenics Graphs"
     ]
   },
   {
-    "objectID": "projects/eugenics-journal-graphs/aoe-graphs.html#rationale",
-    "href": "projects/eugenics-journal-graphs/aoe-graphs.html#rationale",
-    "title": "An Investigation of the Annals of Eugenics (1925-1953)",
-    "section": "2.1 Rationale",
-    "text": "2.1 Rationale\nThis is part of a larger project about the history of Eugenics at my college (The College of Idaho), in my state (Idaho), and in academia as a whole. Exploring the Annals of Eugenics was a way to see the type of work that was being published during its tenure (at least before it was renamed to the Annals of Human Genetics in 1954).",
+    "objectID": "projects/eugenics-journal-graphs/aoe-graphs.html#context-and-motivation",
+    "href": "projects/eugenics-journal-graphs/aoe-graphs.html#context-and-motivation",
+    "title": "Historical Analysis of the Annals of Eugenics (1925-1954)",
+    "section": "",
+    "text": "This analysis is part of a larger investigation into the history of eugenics in academia, particularly at The College of Idaho and within the state of Idaho. Understanding what was published in the Annals of Eugenics provides insight into the type of research that was considered legitimate science during this era and how the field evolved over time.",
     "crumbs": [
       "Projects",
       "Annals of Eugenics Graphs"
     ]
   },
   {
-    "objectID": "projects/eugenics-journal-graphs/aoe-graphs.html#about-the-data",
-    "href": "projects/eugenics-journal-graphs/aoe-graphs.html#about-the-data",
-    "title": "An Investigation of the Annals of Eugenics (1925-1953)",
-    "section": "2.2 About the Data",
-    "text": "2.2 About the Data\nThis dataset is self made! I made a spreadsheet keeping track of the titles and authors of articles across years, volumes, and issues.\nI scraped the data directly from the journal online. :)",
+    "objectID": "projects/eugenics-journal-graphs/aoe-graphs.html#research-questions",
+    "href": "projects/eugenics-journal-graphs/aoe-graphs.html#research-questions",
+    "title": "Historical Analysis of the Annals of Eugenics (1925-1954)",
+    "section": "",
+    "text": "How did publication volume change over the journal’s 29-year run?\nWhich researchers were the most prolific contributors to the journal?\nWhat topics dominated the research published in the Annals of Eugenics?",
+    "crumbs": [
+      "Projects",
+      "Annals of Eugenics Graphs"
+    ]
+  },
+  {
+    "objectID": "projects/eugenics-journal-graphs/aoe-graphs.html#about-the-dataset",
+    "href": "projects/eugenics-journal-graphs/aoe-graphs.html#about-the-dataset",
+    "title": "Historical Analysis of the Annals of Eugenics (1925-1954)",
+    "section": "",
+    "text": "Data Source: The Annals of Eugenics online archive\nCollection Method: Web scraping using Python (BeautifulSoup, requests)\nTime Period: 1925-1954 (Volumes 1-18)\nData Points: Article titles, authors, publication dates, volume/issue numbers\nThe dataset was constructed by scraping article metadata directly from the journal’s online archive, then cleaned and normalized for analysis.",
+    "crumbs": [
+      "Projects",
+      "Annals of Eugenics Graphs"
+    ]
+  },
+  {
+    "objectID": "projects/eugenics-journal-graphs/aoe-graphs.html#web-scraping-implementation",
+    "href": "projects/eugenics-journal-graphs/aoe-graphs.html#web-scraping-implementation",
+    "title": "Historical Analysis of the Annals of Eugenics (1925-1954)",
+    "section": "2.1 Web Scraping Implementation",
+    "text": "2.1 Web Scraping Implementation\nI developed a Python script to systematically extract article metadata from the journal archive. The scraper navigates through each volume and issue, collecting titles, authors, and publication dates.\nView the complete scraping script on GitHub →\nKey challenges included: - Handling inconsistent formatting across different volumes - Extracting author names with various academic titles and credentials - Parsing dates from different formats\n\n\n\nScreenshot of raw scraped data showing article metadata structure",
+    "crumbs": [
+      "Projects",
+      "Annals of Eugenics Graphs"
+    ]
+  },
+  {
+    "objectID": "projects/eugenics-journal-graphs/aoe-graphs.html#data-preview",
+    "href": "projects/eugenics-journal-graphs/aoe-graphs.html#data-preview",
+    "title": "Historical Analysis of the Annals of Eugenics (1925-1954)",
+    "section": "3.1 Data Preview",
+    "text": "3.1 Data Preview\n\n\nDisplay first few rows of the dataset\nprint(tabulate(df.head(), headers='keys', tablefmt='github', showindex=False))\n\n\n| title                                                                                                                    | authors                                                                                                                                       | pages      | date         | article_url                                                            | issue_url                                             |\n|--------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|------------|--------------|------------------------------------------------------------------------|-------------------------------------------------------|\n| FOREWORD                                                                                                                 | nan                                                                                                                                           | p. 1-4     | October 1925 | https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1925.tb02036.x | https://onlinelibrary.wiley.com/toc/20501439/1925/1/1 |\n| THE PROBLEM OF ALIEN IMMIGRATION INTO GREAT BRITAIN, ILLUSTRATED BY AN EXAMINATION OF RUSSIAN AND POLISH JEWISH CHILDREN | KARL PEARSON,, MARGARET MOUL,                                                                                                                 | p. 5-54    | October 1925 | https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1925.tb02037.x | https://onlinelibrary.wiley.com/toc/20501439/1925/1/1 |\n| PROBLEM OF ALIEN IMMIGRATION                                                                                             | nan                                                                                                                                           | p. 56-127  | October 1925 | https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1925.tb02038.x | https://onlinelibrary.wiley.com/toc/20501439/1925/1/2 |\n| A PEDIGREE OF EPICANTHUS AND PTOSIS                                                                                      | C. H. USHER M.B.,                                                                                                                             | p. 128-138 | October 1925 | https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1925.tb02039.x | https://onlinelibrary.wiley.com/toc/20501439/1925/1/2 |\n| ON THE RELATIVE VALUE OF THE FACTORS WHICH INFLUENCE INFANT WELFARE. AN INQUIRY by ETHEL M. ELDERTON                     | Dr A. G. Anderson M.O.H.,, Dr Wm. Arnold Evans M.O.H.,, Dr Alfred Greenwood M.O.H.,, Dr H. O. Pilkington M.O.H.,, Dr C. H. Tattersall M.O.H., | p. 139-243 | October 1925 | https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1925.tb02040.x | https://onlinelibrary.wiley.com/toc/20501439/1925/1/2 |",
+    "crumbs": [
+      "Projects",
+      "Annals of Eugenics Graphs"
+    ]
+  },
+  {
+    "objectID": "projects/eugenics-journal-graphs/aoe-graphs.html#data-cleaning",
+    "href": "projects/eugenics-journal-graphs/aoe-graphs.html#data-cleaning",
+    "title": "Historical Analysis of the Annals of Eugenics (1925-1954)",
+    "section": "3.2 Data Cleaning",
+    "text": "3.2 Data Cleaning\n\n3.2.1 Temporal Data\nConverting publication dates to a standardized format for time-series analysis:\n\n\nParse dates and extract year/month\ndf[\"parsed_date\"] = pd.to_datetime(df[\"date\"], format=\"%B %Y\", errors=\"coerce\")\ndf[\"year\"] = df[\"parsed_date\"].dt.year\ndf[\"month\"] = df[\"parsed_date\"].dt.month\n\n# Verify date parsing worked\nprint(f\"Date range: {df['year'].min():.0f} to {df['year'].max():.0f}\")\nprint(f\"Total articles: {len(df)}\")\n\n\nDate range: 1925 to 1953\nTotal articles: 523\n\n\n\n\n3.2.2 Author Name Normalization\nAuthor names required extensive cleaning due to: - Academic titles (Dr., Professor, Sir) - Degrees and credentials (M.D., Ph.D., F.R.S., etc.) - Institutional affiliations in parentheses - Inconsistent formatting (e.g., “M. N. Karn” vs “Mary N. Karn”)\nStrategy: Normalize all authors to FirstInitial_LASTNAME format to handle variations while preserving identity.\n\n\nSplit author strings into lists\ndef clean_authors(x):\n    \"\"\"Split comma-separated author strings into lists.\"\"\"\n    if pd.isna(x):\n        return []\n    parts = [p.strip() for p in x.split(\",\") if p.strip()]\n    return parts\n\ndf[\"author_list\"] = df[\"authors\"].apply(clean_authors)\n\n\n\n\nDefine regex patterns for academic credentials\n# Academic degrees and credentials to remove\ndegree_patterns = [\n    r\"M\\.?O\\.?H\\.?\", r\"M\\.?B\\.?\", r\"M\\.?A\\.?\", r\"B\\.?S\\.?C\\.?\",\n    r\"R\\.?A\\.?M\\.?C\\.?\", r\"F\\.?R\\.?S\\.?\", r\"D\\.?P\\.?H\\.?\", r\"M\\.?D\\.?\",\n    r\"D\\.?\\s*S\\.?C\\.?\", r\"D\\.?S\\.?C\\.?\", r\"P\\.?R\\.?C\\.?S\\.?\",\n    r\"M\\.?R\\.?C\\.?P\\.?\", r\"M\\.?R\\.?C\\.?P\\.?Ed\", r\"B\\.?S\\.?\",\n    r\"B\\.?Sc\\.?\", r\"C\\.?H\\.?I\\.?B\\.?\", r\"F\\.?R\\.?C\\.?S\\.?\",\n    r\"P\\.?H\\.?D\\.?\", r\"P\\.?R\\.?S\\.?\", r\"M\\.?S\\.?C\\.?\",\n    r\"C\\.?H\\.?B\\.?\", r\"N\\.?Z\\.?\", r\"S\\.?C\\.?D\\.?\",\n    r\"A\\.?B\\.?\", r\"B\\.?A\\.?\", r\"M\\.?S\\.?A\\.?\",\n    r\"D\\.?P\\.?S\\.?Y\\.?C\\.?H\\.?\", r\"R\\.?M\\.?C\\.?\", r\"D\\.?P\\.?M\\.?\",\n    r\"B\\.?S\\.?\\s*\\(?LOND\\)?\", r\"M\\.?A\\.?\\s*CANTAB\\.?\",\n    r\"B\\.?C\\.?H\\.?\\s*\\(?CAMB\\)?\", r\"B\\.?C\\.?H\\.?\",\n    r\"D\\.?M\\.?\\s*\\(?OXON\\)?\", r\"D\\.?M\\.?\",\n    r\"B\\.?\\s*C\\.?H\\.?I\\.?B\\.?\\s*\\(?CAMB\\.?\\)?\", r\"M\\.?\\s*S\\.?C\\.?\",\n]\n\ndegree_regex = re.compile(\n    r\"\\b(?:\" + \"|\".join(degree_patterns) + r\")\\b\",\n    flags=re.IGNORECASE\n)\n\ntitles = re.compile(r\"\\b(Dr|Professor|Sir)\\b\", flags=re.IGNORECASE)\n\n\n\n\nAuthor name cleaning function\ndef clean_author(name):\n    \"\"\"\n    Normalize author names to FirstInitial_LASTNAME format.\n    \n    Example: \"Dr. Mary N. Karn, M.D.\" → \"M_KARN\"\n    \"\"\"\n    if not isinstance(name, str) or not name.strip():\n        return None\n\n    # Remove titles (Dr., Professor, Sir)\n    name = titles.sub(\"\", name)\n\n    # Remove parenthetical suffixes (institutional affiliations)\n    name = re.sub(r\"\\([^)]*\\)\", \"\", name)\n\n    # Remove degrees and credentials\n    name = degree_regex.sub(\"\", name)\n\n    # Remove periods and normalize whitespace\n    name = name.replace(\".\", \" \")\n    name = re.sub(r\"\\s+\", \" \", name).strip()\n\n    if not name:\n        return None\n\n    parts = [p for p in name.split() if p]\n    if len(parts) == 0:\n        return None\n\n    # Extract surname (last token) and first initial\n    last = parts[-1].upper()\n    first_initial = parts[0][0].upper()\n\n    return f\"{first_initial}_{last}\"\n\n# Apply cleaning function to all authors\ndf[\"clean_authors\"] = df[\"author_list\"].apply(\n    lambda lst: [clean_author(a) for a in lst if clean_author(a) is not None]\n)\n\n\n\n\n3.2.3 Title Cleaning\nPreparing article titles for text analysis:\n\n\nNormalize article titles\ndf[\"clean_title\"] = (\n    df[\"title\"]\n    .str.lower()\n    .str.replace(r\"[^a-z0-9\\s]\", \"\", regex=True)\n    .str.replace(r\"\\s+\", \" \", regex=True)\n    .str.strip()\n)",
+    "crumbs": [
+      "Projects",
+      "Annals of Eugenics Graphs"
+    ]
+  },
+  {
+    "objectID": "projects/eugenics-journal-graphs/aoe-graphs.html#publication-trends-over-time",
+    "href": "projects/eugenics-journal-graphs/aoe-graphs.html#publication-trends-over-time",
+    "title": "Historical Analysis of the Annals of Eugenics (1925-1954)",
+    "section": "4.1 Publication Trends Over Time",
+    "text": "4.1 Publication Trends Over Time\nHow did the volume of publications change during the journal’s run?\n\n\nCalculate articles per year\nyear_counts = df[\"year\"].value_counts().sort_index()\nprint(\"Articles published per year:\")\nprint(year_counts)\n\n\nArticles published per year:\nyear\n1925     6\n1926     9\n1927     6\n1928    13\n1930     6\n1931     8\n1933    17\n1934    11\n1935    18\n1936    24\n1937    17\n1938    27\n1939    32\n1940    34\n1941    41\n1943    27\n1946    38\n1947    44\n1949    38\n1951    38\n1952    39\n1953    30\nName: count, dtype: int64\n\n\n\n\nCode\nplt.figure(figsize=(12, 6))\nplt.plot(year_counts.index, year_counts.values, marker=\"o\", linewidth=2, markersize=8)\nplt.xlabel(\"Year\", fontsize=12)\nplt.ylabel(\"Number of Articles\", fontsize=12)\nplt.title(\"Publication Volume in Annals of Eugenics (1925-1954)\", fontsize=14, fontweight='bold')\nplt.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: Number of articles published in the Annals of Eugenics by year (1925-1954)\n\n\n\n\n\nKey Findings: - Publication volume shows clear trends over the journal’s lifespan - Notable peaks and valleys may correspond to historical events (WWII, post-war period) - The journal maintained consistent output across most years",
+    "crumbs": [
+      "Projects",
+      "Annals of Eugenics Graphs"
+    ]
+  },
+  {
+    "objectID": "projects/eugenics-journal-graphs/aoe-graphs.html#research-topics",
+    "href": "projects/eugenics-journal-graphs/aoe-graphs.html#research-topics",
+    "title": "Historical Analysis of the Annals of Eugenics (1925-1954)",
+    "section": "4.2 Research Topics",
+    "text": "4.2 Research Topics\nWhat themes dominated the research published in this journal?\n\n\nExtract and count frequent words in titles\n# Combine all titles and remove stop words\nall_titles = ' '.join(df['clean_title']).lower()\nall_titles = re.sub(r'[^\\w\\s]', '', all_titles)\n\nwords = all_titles.split()\nfiltered_words = [word for word in words if word not in ENGLISH_STOP_WORDS]\n\nword_counts = Counter(filtered_words)\n\n\n\n\nCode\nwordcloud = WordCloud(\n    width=1200,\n    height=600,\n    background_color='white',\n    colormap='viridis',\n    relative_scaling=0.5\n).generate_from_frequencies(word_counts)\n\nplt.figure(figsize=(16, 8))\nplt.imshow(wordcloud, interpolation='bilinear')\nplt.axis('off')\nplt.title(\"Most Frequent Terms in Article Titles\", fontsize=16, fontweight='bold', pad=20)\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\nFigure 2: Most frequent terms in article titles (sized by frequency)\n\n\n\n\n\n\n\nTop 10 most frequent words\ntop_words = word_counts.most_common(10)\ndf_top_words = pd.DataFrame(top_words, columns=['Word', 'Frequency'])\nprint(\"\\nTop 10 Most Frequent Words in Titles:\")\nprint(tabulate(df_top_words, headers='keys', tablefmt='github', showindex=False))\n\n\n\nTop 10 Most Frequent Words in Titles:\n| Word        |   Frequency |\n|-------------|-------------|\n| linkage     |          40 |\n| man         |          32 |\n| data        |          32 |\n| blood       |          32 |\n| inheritance |          26 |\n| groups      |          26 |\n| analysis    |          24 |\n| note        |          22 |\n| study       |          22 |\n| reviews     |          22 |\n\n\n\n\nCode\nplt.figure(figsize=(12, 6))\nsns.barplot(x='Frequency', y='Word', data=df_top_words, palette='viridis')\nplt.title('Top 10 Words in Article Titles', fontsize=14, fontweight='bold')\nplt.xlabel('Frequency', fontsize=12)\nplt.ylabel('Word', fontsize=12)\nplt.tight_layout()\nplt.show()\n\n\n/tmp/ipykernel_7604/3988971941.py:2: FutureWarning: \n\nPassing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.\n\n  sns.barplot(x='Frequency', y='Word', data=df_top_words, palette='viridis')\n\n\n\n\n\n\n\n\nFigure 3: Ten most frequent words appearing in article titles\n\n\n\n\n\nKey Findings: - Terms like “inheritance,” “genetics,” “correlation,” and “blood” dominate - Statistical and quantitative language is prominent (“frequency,” “data,” “analysis”) - Mix of biological/genetic terms and mathematical/statistical terminology reflects the journal’s interdisciplinary nature",
+    "crumbs": [
+      "Projects",
+      "Annals of Eugenics Graphs"
+    ]
+  },
+  {
+    "objectID": "projects/eugenics-journal-graphs/aoe-graphs.html#authorship-patterns",
+    "href": "projects/eugenics-journal-graphs/aoe-graphs.html#authorship-patterns",
+    "title": "Historical Analysis of the Annals of Eugenics (1925-1954)",
+    "section": "4.3 Authorship Patterns",
+    "text": "4.3 Authorship Patterns\nWho were the most prolific contributors to the journal?\n\n\nCount publications per author\n# Flatten author lists and count occurrences\nall_authors = [author for sublist in df['clean_authors'] for author in sublist]\nauthor_counts = Counter(all_authors)\n\nprint(f\"Total unique authors: {len(author_counts)}\")\n\n# Get top 15 authors\ntop_authors = author_counts.most_common(15)\ndf_top_authors = pd.DataFrame(top_authors, columns=['author', 'count'])\n\n\nTotal unique authors: 273\n\n\n\n\nMap normalized names to full names\n# Map coded names back to full names for readability\nrename_map = {\n    \"R_FISHER\": \"Ronald Fisher\",\n    \"L_PENROSE\": \"Lionel Penrose\",\n    \"M_KARN\": \"Mary Noel Karn\",\n    \"J_HALDANE\": \"J.B.S. Haldane\",\n    \"H_HARRIS\": \"Harry Harris\",\n    \"D_FINNEY\": \"David John Finney\",\n    \"P_STOCKS\": \"Percy Stocks\",\n    \"S_LAWLER\": \"Sylvia D. Lawler\",\n    \"K_PEARSON\": \"Karl Pearson\",\n    \"R_RACE\": \"Robert Russell Race\",\n    \"H_KALMUS\": \"Hans Kalmus\",\n    \"C_SMITH\": \"Cedric A. B. Smith\",\n    \"W_RIDDELL\": \"William J. B. Riddell\",\n    \"S_HOLT\": \"Sarah B. Holt\",\n    \"G_TAYLOR\": \"George L. Taylor\",\n}\n\ndf_top_authors['Author Name'] = df_top_authors['author'].map(rename_map).fillna(df_top_authors['author'])\n\n\n\n\nCode\nplt.figure(figsize=(12, 7))\nsns.barplot(\n    x='count',\n    y='Author Name',\n    data=df_top_authors,\n    palette='magma'\n)\nplt.title('Top 15 Most Prolific Authors', fontsize=14, fontweight='bold')\nplt.xlabel('Number of Publications', fontsize=12)\nplt.ylabel('Author', fontsize=12)\nplt.tight_layout()\nplt.show()\n\n\n/tmp/ipykernel_7604/2290777036.py:2: FutureWarning: \n\nPassing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.\n\n  sns.barplot(\n\n\n\n\n\n\n\n\nFigure 4: Fifteen most prolific authors in the Annals of Eugenics\n\n\n\n\n\nKey Findings: - Ronald Fisher was by far the most prolific contributor - Several other prominent statisticians and geneticists appear frequently (Haldane, Pearson, Penrose) - The top authors represent both British and international researchers - Notable presence of women researchers (Karn, Lawler, Holt) in an era when women faced significant barriers in science",
+    "crumbs": [
+      "Projects",
+      "Annals of Eugenics Graphs"
+    ]
+  },
+  {
+    "objectID": "projects/eugenics-journal-graphs/aoe-graphs.html#historical-context",
+    "href": "projects/eugenics-journal-graphs/aoe-graphs.html#historical-context",
+    "title": "Historical Analysis of the Annals of Eugenics (1925-1954)",
+    "section": "5.1 Historical Context",
+    "text": "5.1 Historical Context\nThe Annals of Eugenics was founded in 1925 by Karl Pearson and continued until 1954, when it was renamed the Annals of Human Genetics. This period spans:\n\nThe height of the eugenics movement (1920s-1930s)\nWorld War II and the Holocaust (1939-1945)\nPost-war reckoning with eugenics (late 1940s-1950s)\n\nThe name change in 1954 reflects the field’s shift away from eugenics toward human genetics as a legitimate scientific discipline.",
+    "crumbs": [
+      "Projects",
+      "Annals of Eugenics Graphs"
+    ]
+  },
+  {
+    "objectID": "projects/eugenics-journal-graphs/aoe-graphs.html#research-implications",
+    "href": "projects/eugenics-journal-graphs/aoe-graphs.html#research-implications",
+    "title": "Historical Analysis of the Annals of Eugenics (1925-1954)",
+    "section": "5.2 Research Implications",
+    "text": "5.2 Research Implications\nThis analysis reveals that while the journal bore the name “Eugenics,” much of the published research focused on statistical genetics, inheritance patterns, and quantitative methods. The prominence of terms like “correlation,” “inheritance,” and “blood groups” suggests a focus on empirical research rather than purely ideological work.\nHowever, it’s important to note that:\n\nThe journal’s institutional context was explicitly eugenic\nEven “objective” statistical research was often framed within eugenic ideology\nThe research published here was sometimes used to support discriminatory policies",
     "crumbs": [
       "Projects",
       "Annals of Eugenics Graphs"
@@ -91,20 +190,31 @@
   {
     "objectID": "projects/eugenics-journal-graphs/aoe-graphs.html#limitations",
     "href": "projects/eugenics-journal-graphs/aoe-graphs.html#limitations",
-    "title": "An Investigation of the Annals of Eugenics (1925-1953)",
-    "section": "7.1 Limitations",
-    "text": "7.1 Limitations\nMaking the spreadsheet took a minute, but that’s what happens when you make your own dataset. It probably would have been easier to scrape the data, but that felt like it would’ve taken more time to set up and figure out, and inserting all of this information in a spreadsheet was a decent way to pass time.\nI scraped the data!!!! But this also means having to… clean it.",
+    "title": "Historical Analysis of the Annals of Eugenics (1925-1954)",
+    "section": "5.3 Limitations",
+    "text": "5.3 Limitations\nData Collection:\n\nWeb scraping may have missed some articles if they were formatted differently\nThe analysis only includes article metadata, not full text\nSome author names may have been incorrectly normalized despite extensive cleaning\n\nAnalytical Scope:\n\nThis analysis focuses on publication patterns, not content or impact\nWord frequency analysis of titles provides limited insight into actual research content\nNo assessment of citation patterns or influence\n\nHistorical Interpretation:\n\nQuantitative analysis alone cannot capture the social and political context\nThe presence of certain authors or topics doesn’t indicate endorsement or criticism",
     "crumbs": [
       "Projects",
       "Annals of Eugenics Graphs"
     ]
   },
   {
-    "objectID": "projects/eugenics-journal-graphs/aoe-graphs.html#reflection",
-    "href": "projects/eugenics-journal-graphs/aoe-graphs.html#reflection",
-    "title": "An Investigation of the Annals of Eugenics (1925-1953)",
-    "section": "7.2 Reflection",
-    "text": "7.2 Reflection\n¯\\_(ツ)_/¯ TBD",
+    "objectID": "projects/eugenics-journal-graphs/aoe-graphs.html#future-directions",
+    "href": "projects/eugenics-journal-graphs/aoe-graphs.html#future-directions",
+    "title": "Historical Analysis of the Annals of Eugenics (1925-1954)",
+    "section": "6.1 Future Directions",
+    "text": "6.1 Future Directions\n\nFull-text analysis of articles to better understand research content\nNetwork analysis of co-authorship patterns\nComparison with other genetics/statistics journals of the same era\nIntegration with historical records from institutions that published in this journal",
+    "crumbs": [
+      "Projects",
+      "Annals of Eugenics Graphs"
+    ]
+  },
+  {
+    "objectID": "projects/eugenics-journal-graphs/aoe-graphs.html#repository",
+    "href": "projects/eugenics-journal-graphs/aoe-graphs.html#repository",
+    "title": "Historical Analysis of the Annals of Eugenics (1925-1954)",
+    "section": "6.2 Repository",
+    "text": "6.2 Repository\nAll code and data for this project are available at:\ngithub.com/ashleymikali/eugenics-journal-graphs\n\nThis project was completed as part of ongoing research into the history of eugenics at The College of Idaho and in Idaho more broadly.",
     "crumbs": [
       "Projects",
       "Annals of Eugenics Graphs"
@@ -469,7 +579,7 @@
     "href": "about.html",
     "title": "Projects",
     "section": "",
-    "text": "An Investigation of the Annals of Eugenics (1925-1953)\n\n\nExploring trends and patterns in the Annals of Eugenics.\n\n\n\n\n\n\n\n\n\n\n\n\nAnalyzing Spending Habits With Logistic Regression\n\n\nExploring indicators of spending habit behaviors using logistic regression.\n\n\n\n\n\n\n\n\n\n\n\n\nPredicting US Census Data with XGBoost\n\n\nUsing US Census data to predict whether or not someone has an annual income of more than $50,000.\n\n\n\n\n\nNo matching items\n Back to top",
+    "text": "Analyzing Spending Habits With Logistic Regression\n\n\nExploring indicators of spending habit behaviors using logistic regression.\n\n\n\n\n\n\n\n\n\n\nHistorical Analysis of the Annals of Eugenics (1925-1954)\n\n\nA data-driven exploration of publication trends, authorship patterns, and research topics in a controversial scientific journal.\n\n\n\n\n\n\n\n\n\n\n\n\nPredicting US Census Data with XGBoost\n\n\nUsing US Census data to predict whether or not someone has an annual income of more than $50,000.\n\n\n\n\n\nNo matching items\n Back to top",
     "crumbs": [
       "Projects"
     ]
