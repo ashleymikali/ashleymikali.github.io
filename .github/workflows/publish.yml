@@ -37,6 +37,8 @@ jobs:
           pip install matplotlib
           pip install wordcloud
           pip install tabulate
+          pip install scikit-learn
+          pip install seaborn
       
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
